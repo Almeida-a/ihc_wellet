@@ -14,13 +14,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     UserProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

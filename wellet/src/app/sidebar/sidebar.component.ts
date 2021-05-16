@@ -2,7 +2,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -29,12 +28,4 @@ export class SidebarComponent implements OnInit {
       }
     });
   }
-
 }
-
-// export const routerConfig: Routes = [
-//   {
-//       path: 'user-profile',
-//       component: UserProfileComponent
-//   },
-// ];

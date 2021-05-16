@@ -1,6 +1,8 @@
+// import { UserProfileComponent } from './../user-profile/user-profile.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +12,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class SidebarComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  //constructor() { }
+
   constructor(private observer: BreakpointObserver) {}
 
   ngOnInit(): void {
@@ -29,3 +31,10 @@ export class SidebarComponent implements OnInit {
   }
 
 }
+
+// export const routerConfig: Routes = [
+//   {
+//       path: 'user-profile',
+//       component: UserProfileComponent
+//   },
+// ];

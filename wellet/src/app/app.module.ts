@@ -15,6 +15,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HelpComponent } from './help/help.component';
+import { UsersComponent } from './users/users.component';
+
+//Cards
+import { MatCardModule} from '@angular/material/card';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { HelpComponent } from './help/help.component';
     SidebarComponent,
     UserProfileComponent,
     DashboardComponent,
-    HelpComponent
+    HelpComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,9 @@ import { HelpComponent } from './help/help.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    //Cards
+    MatCardModule,
+    //FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

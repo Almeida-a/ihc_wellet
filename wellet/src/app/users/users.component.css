@@ -3,5 +3,11 @@
 }
 
 .content > mat-card {
-    width: 300px;
+    width: 100px;
+}
+
+mat-card-image {
+    object-fit: cover;
+    width: 210px;
+    height: 200px;
 }

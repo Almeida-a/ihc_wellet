@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="25%" *ngFor="let num of [1]">
             <mat-card class="mat-elevation-z4">
@@ -15,4 +15,14 @@
             </mat-card>
         </div>
     </div>
-</div>
+</div> -->
+
+<mat-card class="mat-elevation-z4">
+    <h2>Account Users</h2>
+    <ul class="users">
+        <li *ngFor="let user of users">
+            <img mat-card-image src={{user.image}}>
+            <span class="badge">{{user.id}}</span> {{user.name}}
+        </li>
+    </ul>
+</mat-card>

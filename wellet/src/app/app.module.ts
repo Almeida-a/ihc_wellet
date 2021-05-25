@@ -24,7 +24,12 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 
 //Search bar
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';  
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ExpensesComponent } from './expenses/expenses.component';
+import { HistoryComponent } from './history/history.component';
+import { RepositoryComponent } from './repository/repository.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { GoalsComponent } from './goals/goals.component';  
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     DashboardComponent,
     HelpComponent,
     UsersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ExpensesComponent,
+    HistoryComponent,
+    RepositoryComponent,
+    AnalyticsComponent,
+    GoalsComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ a:hover:not(.active) {
 .active {
     color: white;
     background-color: rgb(255, 186, 92);
+    border-radius: 4px;
 }
 
 .bg-dark {

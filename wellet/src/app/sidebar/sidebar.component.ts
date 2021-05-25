@@ -11,6 +11,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class SidebarComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+  visible!: boolean
 
   constructor(private observer: BreakpointObserver) {}
 
@@ -27,5 +28,13 @@ export class SidebarComponent implements OnInit {
         this.sidenav.open();
       }
     });
+
+    this.visible = true;
+    // this.observer.observe(['(max-height: 890px)']).subscribe((res) => {
+    //   if (res.matches)
+    //     this.visible = false;
+    //   else 
+    //     this.visible = true;
+    // });
   }
 }

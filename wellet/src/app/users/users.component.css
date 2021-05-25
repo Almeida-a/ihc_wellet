@@ -1,13 +1,14 @@
 /* .content {
     padding: 16px;
-}
-
-.content > mat-card {
-    width: 100px;
 } */
 
-img {
+mat-card {
+    width: 200px;
+    border-radius: 20px;
+}
+
+mat-card-image {
     object-fit: cover;
     width: 200px;
-    height: 200px;
+    height: 300px;
 }

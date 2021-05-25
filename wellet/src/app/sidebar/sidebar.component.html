@@ -8,17 +8,15 @@
     
 <mat-sidenav-container>
     <mat-sidenav class="mat-elevation-z8" #sidenav="matSidenav" mode="side" opened="true">
-        <img class="avatar mat-elevation-z8" src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
+        <img [hidden]="!visible" class="avatar mat-elevation-z8" src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
         <h4 class="name">Alex Will</h4>
         <p class="designation">Software Engineer</p>
-
+ 
         <mat-divider></mat-divider>
         
         <a routerLinkActivated="active" routerLink="dashboard" mat-button class="menu-button">
-        <!-- <button mat-button class="menu-button"> -->
             <mat-icon>home</mat-icon>
             <span>Dashboard</span>
-        <!-- </button> -->
         </a>
 
         <a routerLinkActivated="active" routerLink="users" mat-button class="menu-button">
@@ -74,6 +72,10 @@
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
             <!-- Main content here! -->
+            <div>
+                <app-search-bar></app-search-bar>
+            </div>
+            
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>

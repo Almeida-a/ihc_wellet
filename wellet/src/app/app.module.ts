@@ -19,7 +19,12 @@ import { UsersComponent } from './users/users.component';
 
 //Cards
 import { MatCardModule} from '@angular/material/card';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 //import { FlexLayoutModule } from '@angular/flex-layout';
+
+//Search bar
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';  
 
 @NgModule({
   declarations: [
@@ -28,21 +33,28 @@ import { MatCardModule} from '@angular/material/card';
     UserProfileComponent,
     DashboardComponent,
     HelpComponent,
-    UsersComponent
+    UsersComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
     // Sidebar
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+
     //Cards
     MatCardModule,
     //FlexLayoutModule,
+
+    //Search bar
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

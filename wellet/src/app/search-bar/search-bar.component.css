@@ -9,13 +9,11 @@
         /* font-weight: bolder; */
         color: black;
     }
-
     .search-bar-picture {
         width: 8vh;
         height: 8vh;
         margin: 0 1vw 0 1vw;
     }
-
     .input-group-text {
         background-color: transparent;
         border-color: transparent;

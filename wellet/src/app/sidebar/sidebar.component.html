@@ -1,41 +1,11 @@
-<div class="d-flex flex-column flex-shrink-0" style="width: 5.5rem; height: 100%; background-color: black;">
+<div class="d-flex flex-column flex-shrink-0 sb-additional-style">
     <span class="d-block p-3 text-decoration-none mx-auto mb-4 mt-3">
         <mat-icon class="mx-auto" style="color: white; transform: scale(1.8);">bubble_chart</mat-icon>
     </span>
     <ul class="nav nav-flush flex-column mb-auto text-center">
-      <li class="nav-item">
-        <a routerlinkactivated="active" routerLink="dashboard" class="nav-link active py-3" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-          <mat-icon>home</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="users" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-            <mat-icon>supervisor_account</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="history" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
-            <mat-icon>history</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="expenses" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
-          <mat-icon>account_balance_wallet</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="repository" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Customers">
-          <mat-icon>folder</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="goals" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Customers">
-          <mat-icon>check_box</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerlinkactivated="active" routerLink="analytics" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Customers">
-          <mat-icon>show_chart</mat-icon>
+      <li *ngFor="let item of menuItems" class="nav-item">
+        <a routerLink="{{item.route}}" class="nav-link py-3" (click)="onMenuItemClick(item)" [class.active]="item === selectedItem" title="{{item.name}}" data-bs-toggle="tooltip" data-bs-placement="right">
+          <mat-icon>{{item.icon}}</mat-icon>
         </a>
       </li>
     </ul>

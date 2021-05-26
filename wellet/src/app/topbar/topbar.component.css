@@ -43,3 +43,21 @@
         border-color: transparent;
     }
 }
+
+.user-name-display {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.4em;
+    color: black;
+}
+
+.screen-name-display {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 2.5em;
+    color: black;
+}
+
+.mtc-4 {
+    margin-top: 2.2rem;
+}

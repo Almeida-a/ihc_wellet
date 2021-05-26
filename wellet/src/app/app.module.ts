@@ -19,7 +19,6 @@ import { UsersComponent } from './users/users.component';
 
 //Cards
 import { MatCardModule} from '@angular/material/card';
-import { SearchBarComponent } from './search-bar/search-bar.component';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 //Search bar
@@ -29,7 +28,8 @@ import { ExpensesComponent } from './expenses/expenses.component';
 import { HistoryComponent } from './history/history.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
-import { GoalsComponent } from './goals/goals.component';  
+import { GoalsComponent } from './goals/goals.component';
+import { TopbarComponent } from './topbar/topbar.component';  
 
 @NgModule({
   declarations: [
@@ -39,12 +39,12 @@ import { GoalsComponent } from './goals/goals.component';
     DashboardComponent,
     HelpComponent,
     UsersComponent,
-    SearchBarComponent,
     ExpensesComponent,
     HistoryComponent,
     RepositoryComponent,
     AnalyticsComponent,
-    GoalsComponent
+    GoalsComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,

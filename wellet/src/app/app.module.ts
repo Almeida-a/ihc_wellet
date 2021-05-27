@@ -65,6 +65,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     //Search bar
     MatInputModule,
     MatFormFieldModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

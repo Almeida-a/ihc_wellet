@@ -1,17 +1,82 @@
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  /* border: 0 solid rgba(0, 0, 0, 0.125); */
-  border-color: rgb(248, 173, 68);
+.transparent-box {
+  border-style: solid;
+  border-color: #FFD185;
   border-width: 2px;
   border-radius: 1rem;
-  /* box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05); */
 }
+
+.transparent-box-title {
+  font-family: 'Oswald';
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: rgb(248, 173, 68);
+}
+
+.transparent-box-subtitle {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.transparent-box-text {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(248, 173, 68);
+}
+
+.filled-box {
+  border-style: solid;
+  border-color: #FFD185;
+  border-width: 2px;
+  border-radius: 1rem;
+  background-color: #FFD185;
+}
+
+.filled-box-title {
+  font-family: 'Oswald';
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.filled-box-subtitle {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.filled-box-text {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(248, 173, 68);
+}
+
+.white-box {
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.white-box-title {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1rem;
+  color: black;
+}
+
+.white-box-text {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: rgb(248, 173, 68);
+}
+
 
 /* .toast {
   width: 350px;

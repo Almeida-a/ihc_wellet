@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MENU } from './menu';
 import { MenuItem } from './menu_item';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,17 +13,30 @@ export class SidebarComponent implements OnInit {
 
   menuItems: MenuItem[];
   selectedItem: MenuItem;
+  navigationSubscription: Subscription;
 
-  constructor() {
-    this.menuItems = MENU;
-    this.selectedItem = this.menuItems[0];
+  constructor(private router: Router) {
+
+	this.menuItems = MENU;
+	this.selectedItem = this.menuItems[0];
+
+	this.navigationSubscription = this.router.events.subscribe((e: any) => {
+		if (e instanceof NavigationEnd) 
+			this.updateMenuItem();
+	});
+
+  }
+  
+  updateMenuItem(): void { 
+	for (let i: number = 0; i < this.menuItems.length; i++)
+	  	if (this.menuItems[i].route === this.router.url.replace("/", ""))
+			this.selectedItem = this.menuItems[i];
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onMenuItemClick(menuItem: MenuItem): void {
-    this.selectedItem = menuItem;
+	this.selectedItem = menuItem;
   }
 
 }

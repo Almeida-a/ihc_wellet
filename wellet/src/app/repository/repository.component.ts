@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RepoDocument } from './document';
+import { MOCK_REPOSITORY } from './mock-repository';
 
 @Component({
   selector: 'app-repository',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepositoryComponent implements OnInit {
 
-  constructor() { }
+  repoDocuments: RepoDocument[]
+
+  constructor() {
+    this.repoDocuments = MOCK_REPOSITORY;
+  }
 
   ngOnInit(): void {
   }

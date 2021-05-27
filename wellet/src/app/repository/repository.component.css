@@ -1,0 +1,18 @@
+.card-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.card-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+
+.card-img-top {
+    max-height: 7rem;
+    min-height: 6rem;
+}
+

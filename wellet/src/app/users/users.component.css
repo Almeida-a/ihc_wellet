@@ -1,14 +1,9 @@
-/* .content {
-    padding: 16px;
-} */
-
-mat-card {
-    width: 200px;
-    border-radius: 20px;
+.user-name {
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
-mat-card-image {
-    object-fit: cover;
-    width: 200px;
-    height: 300px;
+.user-image {
+    max-height: 60vh;
 }

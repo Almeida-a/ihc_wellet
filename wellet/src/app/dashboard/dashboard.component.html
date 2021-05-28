@@ -26,67 +26,15 @@
         <div class="container">
           <p class="filled-box-title my-4">Notifications</p>
           <div class="mx-3">
-            <div class="row mb-2">
-              <div class="white-box">
+            <div class="row mb-2" *ngFor="let action of lastActions; let i = index">
+              <div *ngIf="i < nElements" class="white-box">
                 <div class="row">
                   <div class="col-2">
-                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">money_off</mat-icon>
+                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">{{action.icon}}</mat-icon>
                   </div>
                   <div class="col">
-                    <p class="white-box-title mb-0 mt-2">Alex Will added expense</p>
-                    <p class="filled-box-text mb-2">-20.00 €</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2 showHide">
-              <div class="white-box">
-                <div class="row">
-                  <div class="col-2">
-                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">money_off</mat-icon>
-                  </div>
-                  <div class="col">
-                    <p class="white-box-title mb-0 mt-2">Alex Will added expense</p>
-                    <p class="filled-box-text mb-2">-20.00 €</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2">
-              <div class="white-box">
-                <div class="row">
-                  <div class="col-2">
-                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">money_off</mat-icon>
-                  </div>
-                  <div class="col">
-                    <p class="white-box-title mb-0 mt-2">Alex Will added expense</p>
-                    <p class="filled-box-text mb-2">-20.00 €</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2 showHide">
-              <div class="white-box">
-                <div class="row">
-                  <div class="col-2">
-                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">money_off</mat-icon>
-                  </div>
-                  <div class="col">
-                    <p class="white-box-title mb-0 mt-2">Alex Will added expense</p>
-                    <p class="filled-box-text mb-2">-20.00 €</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2 showHide">
-              <div class="white-box">
-                <div class="row">
-                  <div class="col-2">
-                    <mat-icon class="mt-2 pt-1" style="font-size: 2rem;">money_off</mat-icon>
-                  </div>
-                  <div class="col">
-                    <p class="white-box-title mb-0 mt-2">Alex Will added expense</p>
-                    <p class="filled-box-text mb-2">-20.00 €</p>
+                    <p class="white-box-title mb-0 mt-2">{{action.user}} {{action.description}}</p>
+                    <p class="filled-box-text mb-2">-{{action.value | currency:'EUR'}}</p>
                   </div>
                 </div>
               </div>
@@ -111,24 +59,24 @@
         <div class="container">
           <p class="transparent-box-title my-4">Quick Actions</p>
           <div class="row pb-4">
-              <div class="col text-center">
-                <a routerLink="../repository" class="nav-link">
-                  <mat-icon class="mr-2" style="font-size: 2rem;">backup</mat-icon>
-                  <p class="transparent-box-subtitle mb-3">Upload Receipt</p>
-                </a>
-              </div>
-              <div class="col text-center">
-                <a routerLink="../goals" class="nav-link">
-                  <mat-icon class="mr-2" style="font-size: 2rem;">adjust</mat-icon>
-                  <p class="transparent-box-subtitle mb-3">Set Goal</p>
-                </a>
-              </div>
-              <div class="col text-center">
-                <a routerLink="../history" class="nav-link">
-                  <mat-icon class="mr-2" style="font-size: 2rem;">history</mat-icon>
-                  <p class="transparent-box-subtitle mb-3">Check History</p>
-                </a>
-              </div>
+            <div class="col text-center">
+              <a routerLink="../repository" class="nav-link">
+                <mat-icon class="mr-2" style="font-size: 2rem;">backup</mat-icon>
+                <p class="transparent-box-subtitle mb-3">Upload Receipt</p>
+              </a>
+            </div>
+            <div class="col text-center">
+              <a routerLink="../goals" class="nav-link">
+                <mat-icon class="mr-2" style="font-size: 2rem;">adjust</mat-icon>
+                <p class="transparent-box-subtitle mb-3">Set Goal</p>
+              </a>
+            </div>
+            <div class="col text-center">
+              <a routerLink="../history" class="nav-link">
+                <mat-icon class="mr-2" style="font-size: 2rem;">history</mat-icon>
+                <p class="transparent-box-subtitle mb-3">Check History</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>

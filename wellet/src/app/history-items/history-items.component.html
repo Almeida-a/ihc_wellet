@@ -1,1 +1,6 @@
-<p>history-items works!</p>
+<h2>Recorded receipts</h2>
+<ul class="items">
+    <li *ngFor="let item of items">
+        <span class="badge">{{item.label}}</span> {{item.info}}
+    </li>
+</ul>

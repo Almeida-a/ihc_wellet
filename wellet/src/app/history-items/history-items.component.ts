@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MOCK_HISTORY } from './mock-history-items';
+import { HistItem } from './receipt';
 
 @Component({
   selector: 'app-history-items',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryItemsComponent implements OnInit {
 
+  items!: HistItem[]
+
   constructor() { }
 
   ngOnInit(): void {
+    this.items = MOCK_HISTORY
   }
 
 }

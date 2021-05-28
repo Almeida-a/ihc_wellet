@@ -29,7 +29,9 @@ import { HistoryComponent } from './history/history.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { GoalsComponent } from './goals/goals.component';
-import { TopbarComponent } from './topbar/topbar.component';  
+import { TopbarComponent } from './topbar/topbar.component';
+import { HistoryItemsComponent } from './history-items/history-items.component';
+import { FilterComponent } from './filter/filter.component';  
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { TopbarComponent } from './topbar/topbar.component';
     RepositoryComponent,
     AnalyticsComponent,
     GoalsComponent,
-    TopbarComponent
+    TopbarComponent,
+    HistoryItemsComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

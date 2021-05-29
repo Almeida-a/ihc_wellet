@@ -31,7 +31,11 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { GoalsComponent } from './goals/goals.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { HistoryItemsComponent } from './history-items/history-items.component';
-import { FilterComponent } from './filter/filter.component';  
+import { FilterComponent } from './filter/filter.component';
+
+
+import { PieChartComponent } from './pie-chart/pie-chart.component'; 
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,8 @@ import { FilterComponent } from './filter/filter.component';
     GoalsComponent,
     TopbarComponent,
     HistoryItemsComponent,
-    FilterComponent
+    FilterComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +75,7 @@ import { FilterComponent } from './filter/filter.component';
     MatInputModule,
     MatFormFieldModule,
 
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

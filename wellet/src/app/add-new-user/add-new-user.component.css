@@ -1,0 +1,259 @@
+.btn {
+    font-weight: 500;
+    min-height: 50px;
+    min-width: 100px;
+    margin: 1vw;
+    color: white;
+    background-color: rgb(255, 200, 123);
+}
+
+.btn-search {
+    background-color: rgb(248, 173, 68);
+}
+
+.btn-invite {
+    font-weight: 500;
+    min-height: 70px;
+    min-width: 60%;
+    font-size: large;
+    background-color: rgb(248, 173, 68);
+}
+
+.search-bar-input::placeholder {
+    font-family: 'Oswald';
+    color: rgb(248, 173, 68);
+    margin-right: 1vw;
+}
+
+.user-name {
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.user-image {
+    max-height: 55vh;
+    object-fit: cover;
+}
+
+.transparent-box {
+    border-style: solid;
+    border-color: #FFD185;
+    border-width: 2px;
+    border-radius: 1rem;
+}
+  
+  .transparent-box-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+    padding: 1vw 1vw 0vw 1vw;
+    line-height: 2rem;
+}
+
+  .transparent-box-subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    padding: 0vw 1vw 1vw 1vw;
+}
+  
+  .transparent-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgb(248, 173, 68);
+}
+  
+  .filled-box {
+    border-style: solid;
+    border-color: #FFD185;
+    border-width: 2px;
+    border-radius: 1rem;
+    background-color: #FFD185;
+}
+  
+  .filled-box-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: white;
+}
+  
+  .filled-box-subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+  
+  .filled-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgb(248, 173, 68);
+}
+  
+  .white-box {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 1rem;
+    background-color: white;
+}
+  
+  .white-box-title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: black;
+}
+  
+  .white-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgb(248, 173, 68);
+}
+
+@media (min-width: 0px) and (max-width: 799px) {
+    .search-bar-input {
+        width: 20vw;
+        height: 10vh;
+        border-radius: 10px; 
+        border-color: rgb(248, 173, 68); 
+        border-width: 2px;
+        text-align: right;
+        /* font-weight: bolder; */
+        color: black;
+    }
+    .search-bar-picture {
+        width: 10vh;
+        height: 10vh;
+        margin: 0 0.5vw 0 0.5vw;
+    }
+    .input-group-text {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    /* .search-bar-icon {
+        background-color: rgb(248, 173, 68);
+        border-radius: 10px;
+        max-height: 10vh;
+    } */
+
+    .user-title {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 1.8rem;
+        color: black;
+        padding: 1vw;
+        margin-top: 2vw;
+        line-height: 1.8rem;
+    }
+    
+    .user-subtitle {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 1rem;
+        color: black;
+    }
+
+}
+
+@media (min-width: 800px) and (max-width: 1399px) {
+    .search-bar-input {
+        width: 35vw;
+        height: 8vh;
+        border-radius: 10px; 
+        border-color: rgb(248, 173, 68); 
+        border-width: 2px;
+        text-align: right;
+        font-family: 'Oswald';
+        color: black;
+    }
+
+    .search-bar-picture {
+        width: 8vh;
+        height: 8vh;
+        margin: 0 1vw 0 1vw;
+    }
+
+    .input-group-text {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    /* .search-bar-icon {
+        background-color: rgb(248, 173, 68);
+        border-radius: 10px;
+        max-height: 8vh;
+    } */
+
+    .user-title {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 2.5rem;
+        color: black;
+        padding: 1vw;
+        margin-top: 2vw;
+    }
+    
+    .user-subtitle {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: black;
+    }
+
+}
+
+@media (min-width: 1400px) and (max-width: 2000px) {
+    .search-bar-input {
+        width: 35vw;
+        height: 8vh;
+        border-radius: 10px; 
+        border-color: rgb(248, 173, 68); 
+        border-width: 2px;
+        text-align: right;
+        /* font-weight: bolder; */
+        color: black;
+    }
+
+    .search-bar-picture {
+        width: 8vh;
+        height: 8vh;
+        margin: 0 1vw 0 1vw;
+    }
+
+    .input-group-text {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    /* .search-bar-icon {
+        background-color: rgb(248, 173, 68);
+        border-radius: 10px;
+        max-height: 8vh;
+    } */
+    
+    .user-title {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 3rem;
+        color: black;
+        padding: 1vw;
+        margin-top: 2vw;
+    }
+    
+    .user-subtitle {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: black;
+    }
+}

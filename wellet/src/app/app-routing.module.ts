@@ -10,6 +10,7 @@ import { GoalsComponent } from './goals/goals.component';
 
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'analytics', component: AnalyticsComponent},
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'help', component: HelpComponent },
+  { path: 'add-new-user', component: AddNewUserComponent },
 ];
 
 @NgModule({

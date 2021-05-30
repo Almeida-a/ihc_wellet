@@ -30,7 +30,7 @@
     font-weight: 400;
     font-size: 1rem;
     color: rgb(0, 0, 0);
-    height: 2rem;
+    height: 3rem;
 }
   
   .filled-box-text {
@@ -38,6 +38,13 @@
     font-weight: 400;
     font-size: 1rem;
     color: rgb(248, 173, 68);
+}
+
+
+@media (min-width: 0px) and (max-width: 1299px) {
+    .card-display {
+        padding: 0vw 2vw 0vw 2vw;
+    }
 }
 
 @media (min-width: 1300px) and (max-width: 2000px) {

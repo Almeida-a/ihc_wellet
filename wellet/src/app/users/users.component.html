@@ -3,10 +3,10 @@
     <div class="row card-display" align="center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let user of userList">
             <ng-container *ngIf="user.name != ''">
-                <div class="card mx-auto" style="width: 80%; border-radius: 20px;">
+                <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
                     <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" alt="Card image cap">
                 </div>
-                <div class="filled-box" style="width: 80%; margin-top: 2vw;">
+                <div class="filled-box" style="width: 70%; margin-top: 2vw;">
                     <div class="container">
                         <p class="filled-box-title my-4">{{user.name}}</p>
                         <p class="filled-box-subtitle">"{{user.description}}"</p>
@@ -15,12 +15,12 @@
                 </div>
             </ng-container>
             <ng-container *ngIf="user.name == ''">
-                <div class="card mx-auto" style="width: 80%; border-radius: 20px;">
+                <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
                     <a routerLink="../add-new-user"> 
                         <img class="card-img-top user-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
                     </a>
                 </div>
-                <div class="filled-box" style="width: 80%; margin-top: 2vw; background-color: transparent;">
+                <div class="filled-box" style="width: 70%; margin-top: 2vw; background-color: transparent;">
                     <p class="filled-box-title my-4">Add User</p>
                     <p class="filled-box-subtitle">Empty Slot</p>
                 </div>

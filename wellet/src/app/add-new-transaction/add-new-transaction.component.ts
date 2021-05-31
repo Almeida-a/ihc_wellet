@@ -11,12 +11,15 @@ import { incomes } from "src/storage/IncomesStorage";
 export class AddNewTransactionComponent implements OnInit {
 
   currentTransaction!: Transaction;
+  transactionAdded: boolean;
 
   constructor() {
-    this.currentTransaction = new Transaction();
+    this.transactionAdded = false;
   }
 
   ngOnInit(): void {
+    this.currentTransaction = new Transaction();
+    this.transactionAdded = false;
   }
 
   onTypeChange(radioValue?: string): void {
@@ -43,10 +46,15 @@ export class AddNewTransactionComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.currentTransaction.save();
+    this.transactionAdded = true;
     console.log("Expenses: " + expenses)
     console.log("Income: " + incomes)
+  }
+
+  onNewTransaction(): void {
+    this.ngOnInit();
   }
 
 }

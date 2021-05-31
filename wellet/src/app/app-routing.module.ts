@@ -11,6 +11,8 @@ import { GoalsComponent } from './goals/goals.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
+import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
+import { RouteInfo } from './RouteInfo';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
@@ -24,6 +26,23 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'help', component: HelpComponent },
   { path: 'add-new-user', component: AddNewUserComponent },
+  { path: 'add-new-transaction', component: AddNewTransactionComponent }
+];
+
+export const routes_names: RouteInfo[] = [
+  { routeLink: 'dashboard', routeName: 'Dashboard' },
+  { routeLink: 'users', routeName: 'Users' },
+  { routeLink: 'history', routeName: 'History' },
+  { routeLink: 'expenses', routeName: 'Expenses' },
+  { routeLink: 'repository', routeName: 'Repository' },
+  { routeLink: 'goals', routeName: 'Goals' },
+  { routeLink: 'analytics', routeName: 'Analytics' },
+  { routeLink: 'user-profile', routeName: 'User' },
+  { routeLink: 'help', routeName: 'Help' },
+  { routeLink: 'users', routeName: 'Users' },
+  { routeLink: 'users', routeName: 'Users' },
+  { routeLink: 'add-new-user', routeName: 'Add User' },
+  { routeLink: 'add-new-transaction', routeName: 'Add Transaction' }
 ];
 
 @NgModule({

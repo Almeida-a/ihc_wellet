@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,8 @@ import { FilterComponent } from './filter/filter.component';
 
 import { PieChartComponent } from './pie-chart/pie-chart.component'; 
 import { ChartsModule } from 'ng2-charts';
+import { AddNewUserComponent } from './add-new-user/add-new-user.component';
+import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { ChartsModule } from 'ng2-charts';
     HistoryItemsComponent,
     FilterComponent,
     PieChartComponent,
+    AddNewUserComponent,
+    AddNewTransactionComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { ChartsModule } from 'ng2-charts';
     MatFormFieldModule,
 
     ChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

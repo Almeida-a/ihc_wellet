@@ -1,70 +1,30 @@
-<!-- <div>
-    <div fxLayout="row wrap" fxLayoutGap="16px grid">
-        <div fxFlex="25%" *ngFor="let user of users">
-            <mat-card class="mat-elevation-z4">
-                <img mat-card-image src="{{user.image}}">
-                <mat-card-title>{{user.name}}</mat-card-title>
-                <mat-card-content>
-                    <p>{{user.description}}.</p>
-                </mat-card-content>
-                
-                <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-    </div>
-</div> -->
-
-<!--<div>
-    <div fxLayout="row wrap" fxLayoutGap="30px grid">
-        <div fxFlex="25%" *ngFor="let user of users">
-            <mat-card class="mat-elevation-z4">
-                <img mat-card-image src="{{user.image}}">
-                <mat-card-title>{{user.name}}</mat-card-title>
-                <mat-card-content>
-                    <p>{{user.description}}.</p>
-                </mat-card-content>
-                
-                <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-    </div>
-</div>-->
-
+<!-- <div class="container-fluid" style="background-image: url('../../assets/Users_Background.png'); background-position-x: center; background-position-y: center;"> -->
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let user of userList">
-            <div class="card mx-auto" style="width: 85%; border-radius: 20px;">
-                <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" alt="Card image cap">
-                <div class="card-body">
-                    <div class="row pl-3">
-                        <div class="col-8 pl-0">
-                            <h5 class="card-title user-name my-2">{{user.name}}</h5>
-                        </div>
-                        <div class="col-2 mx-auto my-auto">
-                            <a href="#"><mat-icon class="mt-2" style="color: rgb(248, 173, 68);">visibility</mat-icon></a>
-                        </div>
+    <div class="row card-display" align="center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let user of userList">
+            <ng-container *ngIf="user.name != ''">
+                <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
+                    <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" alt="Card image cap">
+                </div>
+                <div class="filled-box" style="width: 70%; margin-top: 2vw;">
+                    <div class="container">
+                        <p class="filled-box-title my-4">{{user.name}}</p>
+                        <p class="filled-box-subtitle">"{{user.description}}"</p>
+                        <a href="#"><mat-icon class="mb-3" style="color: rgb(248, 173, 68);">visibility</mat-icon></a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card mx-auto" style="width: 85%; border-radius: 20px;">
-                <img class="card-img-top user-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col" align="center">
-                            <h5 class="card-title user-name my-2">Add User</h5>
-                        </div>
-                    </div>
+            </ng-container>
+            <ng-container *ngIf="user.name == ''">
+                <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
+                    <a routerLink="../add-new-user"> 
+                        <img class="card-img-top user-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
+                    </a>
                 </div>
-            </div>
+                <div class="filled-box" style="width: 70%; margin-top: 2vw; background-color: transparent;">
+                    <p class="filled-box-title my-4">Add User</p>
+                    <p class="filled-box-subtitle">Empty Slot</p>
+                </div>
+            </ng-container>
         </div>
     </div>
-    
 </div>

@@ -1,0 +1,66 @@
+.btn {
+    font-weight: 500;
+    min-height: 70px;
+    min-width: 70%;
+    font-size: large;
+    border-radius: 10px;
+    margin-bottom: 1vw;
+    color: white;
+    background-color: rgb(248, 173, 68);
+}
+
+.goal-name {
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.goal-image {
+    max-height: 13vw;
+    object-fit: cover;
+    border-color: transparent;
+}
+
+.filled-box {
+    border-style: solid;
+    border-color: #FFD185;
+    border-width: 2px;
+    border-radius: 1rem;
+    background-color: #FFD185;
+}
+  
+  .filled-box-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+    line-height: 2rem;
+}
+  
+  .filled-box-subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    height: 3rem;
+}
+  
+  .filled-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgb(248, 173, 68);
+}
+
+
+@media (min-width: 0px) and (max-width: 1299px) {
+    .card-display {
+        padding: 0vw 2vw 0vw 2vw;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 2000px) {
+    .card-display {
+        padding: 0vw 8vw 0vw 8vw;
+    }
+}

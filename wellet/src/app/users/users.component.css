@@ -17,7 +17,7 @@
     background-color: #FFD185;
 }
   
-  .filled-box-title {
+.filled-box-title {
     font-family: 'Oswald';
     font-weight: 500;
     font-size: 2rem;
@@ -33,7 +33,7 @@
     height: 3rem;
 }
   
-  .filled-box-text {
+.filled-box-text {
     font-family: 'Oswald';
     font-weight: 400;
     font-size: 1rem;

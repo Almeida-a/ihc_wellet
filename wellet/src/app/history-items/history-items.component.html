@@ -1,6 +1,6 @@
 <h2>Recorded receipts</h2>
 <ul class="items">
-    <li *ngFor="let item of items">
+    <ul *ngFor="let item of items">
         <div class="grid-container">
             <!-- Icon -->
             <p class="grid-item">{{item.label}}</p>
@@ -11,5 +11,5 @@
             <p class="grid-item">{{item.date}}</p>
         </div>
         <br/>
-    </li>
+    </ul>
 </ul>

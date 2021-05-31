@@ -1,4 +1,40 @@
 div.round {
     border: 2px solid rgb(248, 173, 68);
     border-radius: 5px;
-  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: lightsalmon;
+  padding: 10px;
+  align-content: space-between;
+}
+.grid-item {
+  background-color: lightyellow;
+  border: 1px solid lightsalmon;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+p.topRight {
+  text-align: right;
+  vertical-align: top;
+}
+
+p.bottomRight {
+  text-align: right;
+  vertical-align: bottom;
+}
+
+p.topLeft {
+  text-align: left;
+  vertical-align: top;
+}
+
+p.bottomLeft {
+  text-align: left;
+  vertical-align: bottom;
+}
+

@@ -1,10 +1,14 @@
 <h2>Recorded receipts</h2>
 <ul class="items">
     <li *ngFor="let item of items">
-        <div class="round">
-            <table>
-                <!-- Put item info here ... -->
-            </table>
+        <div class="grid-container">
+            <!-- Icon -->
+            <p class="grid-item">{{item.label}}</p>
+            <!-- <p class="grid-item"></p> -->
+            <p class="grid-item">{{item.time.hours}}:{{item.time.minutes}}h</p>
+            <p class="grid-item">{{item.info}}</p>
+            <!-- <p class="grid-item"></p> -->
+            <p class="grid-item">{{item.date}}</p>
         </div>
         <br/>
     </li>

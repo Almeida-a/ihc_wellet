@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { MENU } from '../sidebar/menu';
-import { MenuItem } from '../sidebar/menu_item';
+import { RouteInfo } from '../RouteInfo';
+import { routes_names } from '../app-routing.module'
 
 @Component({
   selector: 'app-topbar',
@@ -16,11 +16,11 @@ export class TopbarComponent implements OnInit {
   currentScreen?: string;
   
   navigationSubscription: Subscription;
-  menuItems: MenuItem[];
+  routesInfo: RouteInfo[];
 
   constructor(private router: Router) {
     
-    this.menuItems = MENU;
+    this.routesInfo = routes_names;
 
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) 
@@ -30,11 +30,10 @@ export class TopbarComponent implements OnInit {
   }
 
   updateScreenName(): void {
-    for (let i: number = 0; i < this.menuItems.length; i++)
-	  	if (this.menuItems[i].route === this.router.url.replace("/", ""))
-			  this.currentScreen = this.menuItems[i].name;
+    for (let i: number = 0; i < this.routesInfo.length; i++)
+	  	if (this.routesInfo[i].routeLink === this.router.url.replace("/", ""))
+			  this.currentScreen = this.routesInfo[i].routeName;
   }
-
 
   ngOnInit(): void {
   }

@@ -7,5 +7,5 @@ export const MENU: MenuItem[] = [
     {id: 4, name: "Expenses", route: "expenses", icon: "account_balance_wallet"},
     {id: 5, name: "Repository", route: "repository", icon: "folder"},
     {id: 6, name: "Goals", route: "goals", icon: "check_box"},
-    {id: 7, name: "Reports", route: "analytics", icon: "show_cart"}
+    {id: 7, name: "Reports", route: "analytics", icon: "show_chart"}
 ]

@@ -1,4 +1,4 @@
-import { USERS } from './mock-users';
+import { USERS } from './account-users'
 import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 

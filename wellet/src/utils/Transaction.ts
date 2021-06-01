@@ -1,20 +1,11 @@
 import { incomes } from "src/storage/IncomesStorage";
 import { expenses } from "src/storage/ExpensesStorage";
+import { User } from "./User";
 
 export class Transaction {
-    
-    private _name?: string;
-    private _value?: number;
-    private _category?: string;
-    private _type: TransactionType;
-    private _visibility: TransactionVisibility;
 
-    public constructor () {
-        this._name = undefined;
-        this._value = undefined;
-        this._category = undefined;
-        this._type = TransactionType.EXPENSE;
-        this._visibility = TransactionVisibility.VISIBLE;
+    public constructor (private _visibility: TransactionVisibility, private _type: TransactionType, 
+        private _user: User, private _name?: string, private _value?: number, private _category?: string) {
     }
 
     public get name() : string | undefined {
@@ -35,6 +26,10 @@ export class Transaction {
 
     public get visibility() : TransactionVisibility {
         return this._visibility;
+    }
+
+    public get user() : User {
+        return this._user;
     }
     
     public set name(newName: string | undefined) {
@@ -65,16 +60,8 @@ export class Transaction {
     }
 
     public clone(): Transaction {
-        
-        let clonedObj = new Transaction();
-
-        clonedObj.name = this.name;
-        clonedObj.value = this.value;
-        clonedObj.category = this.category;
-        clonedObj.type = this.type;
-        clonedObj.visibility = this.visibility;
-        
-        return clonedObj;
+        return new Transaction(this._visibility, this._type, 
+            this._user, this._name, this._value, this._category);
     }
 
 }

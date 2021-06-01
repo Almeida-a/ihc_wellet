@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MOCK_HISTORY } from './mock-history-items';
 import { HistItem } from './receipt';
+import { expenses } from '../../storage/ExpensesStorage'
+import { incomes } from '../../storage/IncomesStorage'
+import { Transaction } from 'src/utils/Transaction';
 
 @Component({
   selector: 'app-history-items',
@@ -9,12 +12,13 @@ import { HistItem } from './receipt';
 })
 export class HistoryItemsComponent implements OnInit {
 
-  items!: HistItem[]
+  allTransactions!: Transaction[]
 
   constructor() { }
 
   ngOnInit(): void {
-    this.items = MOCK_HISTORY
+    this.allTransactions = expenses;
+    this.allTransactions = this.allTransactions.concat(incomes);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Transaction } from 'src/utils/Transaction';
 import { expenses } from "src/storage/ExpensesStorage";
 import { incomes } from "src/storage/IncomesStorage";
+import { currentStoredUser, users } from 'src/storage/UsersStorage';
 
 @Component({
   selector: 'app-add-new-transaction',
@@ -18,7 +19,7 @@ export class AddNewTransactionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentTransaction = new Transaction();
+    this.currentTransaction = new Transaction(TransactionVisibility.VISIBLE, TransactionType.EXPENSE, users[1]);
     this.transactionAdded = false;
   }
 
@@ -49,8 +50,7 @@ export class AddNewTransactionComponent implements OnInit {
   onSubmit(): void {
     this.currentTransaction.save();
     this.transactionAdded = true;
-    console.log("Expenses: " + expenses)
-    console.log("Income: " + incomes)
+    console.log(expenses)
   }
 
   onNewTransaction(): void {

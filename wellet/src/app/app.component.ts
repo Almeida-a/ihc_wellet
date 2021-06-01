@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { users, currentStoredUser } from 'src/storage/UsersStorage';
+import { User } from 'src/utils/User';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = 'Alex Will'
+  user: User; 
+
+  constructor () {
+    this.user = users[1]; 
+  }
+
 }

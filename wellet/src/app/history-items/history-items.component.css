@@ -1,6 +1,6 @@
-div.round {
-    border: 2px solid orange;
-    border-radius: 5px;
+/*div.round {
+  border: 2px solid orange;
+  border-radius: 5px;
 }
 
 .grid-container {
@@ -38,5 +38,33 @@ p.topLeft {
 p.bottomLeft {
   text-align: left;
   vertical-align: bottom;
+}*/
+
+.transparent-box {
+  border-style: solid;
+  border-color: #FFD185;
+  border-width: 2px;
+  border-radius: 1rem;
+}
+
+.transparent-box-title {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.transparent-box-text {
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: rgb(248, 173, 68);
+}
+
+.transaction-icon {
+  font-size: 2.7rem;
+  height: 2.7rem;
+  width: 2.7rem;
+  color: black;
 }
 

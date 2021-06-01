@@ -1,4 +1,4 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-8">
             <div class="transparent-box">
@@ -7,18 +7,19 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="transparent-box-subtitle">Name</label>
                         <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Expense name" [(ngModel)]="currentTransaction.name" [disabled]="transactionAdded">
+                            placeholder="Goal name" [(ngModel)]="currentGoal.name"  [disabled]="goalAdded">
                     </div>
                     <div class="form-group">
-                        <label for="expenseCategoryInput" class="transparent-box-subtitle">Category</label>
+                        <label for="expenseCategoryInput" class="transparent-box-subtitle">Description</label>
                         <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput" aria-describedby="emailHelp"
-                            placeholder="Enter category" [(ngModel)]="currentTransaction.category" [disabled]="transactionAdded">
+                            placeholder="Enter description" [(ngModel)]="currentGoal.description" [disabled]="goalAdded">
                     </div>
                     <div class="form-group">
-                        <label for="expenseAmount" class="transparent-box-subtitle">Start ammount</label>
+                        <label for="expenseAmount" class="transparent-box-subtitle">Start Amount</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert starting amount" 
+                                [(ngModel)]="currentGoal.currentValue" [disabled]="goalAdded">
                             <div class="input-group-append">
                                 <span class="input-group-text">€</span>
                             </div>
@@ -28,7 +29,8 @@
                         <label for="expenseAmount" class="transparent-box-subtitle">Goal value</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert final value" 
+                                [(ngModel)]="currentGoal.finalValue" [disabled]="goalAdded">
                             <div class="input-group-append">
                                 <span class="input-group-text">€</span>
                             </div>
@@ -37,11 +39,12 @@
                     <div class="form-group">
                         <label for="expenseAmount" class="transparent-box-subtitle">Deadline</label>
                         <div class="input-group">
-                            <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
-                            <div class="input-group-append">
+                            <input id="expenseAmount" name="transactionValue" type="date" class="form-control"
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert deadline" 
+                                [(ngModel)]="currentGoal.deadline" [disabled]="goalAdded">
+                            <!--<div class="input-group-append">
                                 <span class="input-group-text">€</span>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </form>
@@ -53,7 +56,8 @@
                 <div class="container">
                     <p class="filled-box-title my-4">Preview</p>
 
-                    <div id="preview_boxes" *ngIf="!transactionAdded">
+                    <div id="preview_boxes" *ngIf="!goalAdded">
+
                         <div class="white-box my-2" id="preview_type">
                             <div class="row">
                                 <div class="col-2">
@@ -61,7 +65,7 @@
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Name</p>
-                                    <p class="white-box-text mb-2">{{currentTransaction.name || "Unknown"}}</p>
+                                    <p class="white-box-text mb-2">{{currentGoal.name || "Goal Name"}}</p>
                                 </div>
                             </div>
     
@@ -73,8 +77,8 @@
     
                                 </div>
                                 <div class="col">
-                                    <p class="white-box-title mt-2 mb-0">Type</p>
-                                    <p class="white-box-text mb-2">{{currentTransaction.type}}</p>
+                                    <p class="white-box-title mt-2 mb-0">Description</p>
+                                    <p class="white-box-text mb-2">{{currentGoal.description || "Goal Description"}}</p>
                                 </div>
                             </div>
     
@@ -85,8 +89,8 @@
     
                                 </div>
                                 <div class="col">
-                                    <p class="white-box-title mt-2 mb-0">Value</p>
-                                    <p class="white-box-text mb-2">{{(currentTransaction.value | currency: 'EUR') || "€0.00"}}</p>
+                                    <p class="white-box-title mt-2 mb-0">Starting Amount</p>
+                                    <p class="white-box-text mb-2">{{currentGoal.currentValue | currency: 'EUR'}}</p>
                                 </div>
                             </div>
     
@@ -97,8 +101,8 @@
                                 <div class="col-2">
                                 </div>
                                 <div class="col">
-                                    <p class="white-box-title mt-2 mb-0">Category</p>
-                                    <p class="white-box-text mb-2">{{currentTransaction.category || "Unknown"}}</p>
+                                    <p class="white-box-title mt-2 mb-0">Goal Value</p>
+                                    <p class="white-box-text mb-2">{{currentGoal.finalValue | currency: 'EUR'}}</p>
                                 </div>
                             </div>
                         </div>
@@ -108,34 +112,34 @@
                                 <div class="col-2">
                                 </div>
                                 <div class="col">
-                                    <p class="white-box-title mt-2 mb-0">Visibility</p>
-                                    <p class="white-box-text mb-2">{{currentTransaction.visibility || "Visible"}}</p>
+                                    <p class="white-box-title mt-2 mb-0">Deadline</p>
+                                    <p class="white-box-text mb-2">{{currentGoal.deadline | date: "shortD"}}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        
                         <div class="row">
-                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="onSubmit()">Add Transaction</button>
+                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="createGoal()">Add Goal</button>
                         </div>
 
                     </div> 
                     
-                    <div id="transactionAddConfirmation" *ngIf="transactionAdded">
+                    <div id="transactionAddConfirmation" *ngIf="goalAdded">
 
                         <div class="white-box my-2 mb-4" id="preview_category">
                             <div class="row">
                                 <div class="col text-center">
-                                    <p class="white-box-title m-4">Transaction Successfully Added!</p>
+                                    <p class="white-box-title m-4">Goal Successfully Added!</p>
                                     <mat-icon class="transaction-accepted-icon mt-0 mb-4">check_circle</mat-icon>
                                 </div>
                             </div>
                             <div class="row mx-auto mb-3 mt-2">
                                 <div class="col-6">
-                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New Transaction</button>
+                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New Goal</button>
                                 </div>
                                 <div class="col-6">
-                                    <a routerLink="../history">
-                                        <button class="btn btn-yellow w-100 mx-auto text-center">History</button>
+                                    <a routerLink="../goals">
+                                        <button class="btn btn-yellow w-100 mx-auto text-center">Goals</button>
                                     </a>
                                 </div>
                             </div>
@@ -147,4 +151,5 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
+

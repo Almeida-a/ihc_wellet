@@ -19,5 +19,10 @@ export class AddNewGoalComponent implements OnInit {
     this.currentGoal = new Goal("progress", "Undefined", 0, 0, new Date());
     this.goalAdded = false;
   }
+  
+  createGoal(): void {
+    this.currentGoal.save();
+    this.goalAdded = true;
+  }
 
 }

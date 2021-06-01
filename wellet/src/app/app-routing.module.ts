@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { RouteInfo } from './RouteInfo';
+import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'help', component: HelpComponent },
   { path: 'add-new-user', component: AddNewUserComponent },
-  { path: 'add-new-transaction', component: AddNewTransactionComponent }
+  { path: 'add-new-transaction', component: AddNewTransactionComponent },
+  { path: 'add-new-goal', component: AddNewGoalComponent }
 ];
 
 export const routes_names: RouteInfo[] = [

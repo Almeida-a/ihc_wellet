@@ -111,19 +111,34 @@ mat-icon {
     background-color: white;
 }
   
-  .white-box-title {
+.white-box-title {
     font-family: 'Oswald';
     font-weight: 400;
     font-size: 1rem;
     color: black;
 }
   
-  .white-box-text {
+.white-box-text {
     font-family: 'Oswald';
     font-weight: 400;
     font-size: 0.9rem;
     color: rgb(248, 173, 68);
 }
+
+.modal-title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.modal-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: black;
+}
+
 
 @media (min-width: 0px) and (max-width: 799px) {
     .search-bar-input {

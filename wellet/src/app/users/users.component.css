@@ -17,7 +17,7 @@
     background-color: #FFD185;
 }
   
-  .filled-box-title {
+.filled-box-title {
     font-family: 'Oswald';
     font-weight: 500;
     font-size: 2rem;
@@ -33,21 +33,24 @@
     height: 3rem;
 }
   
-  .filled-box-text {
+.filled-box-text {
     font-family: 'Oswald';
     font-weight: 400;
     font-size: 1rem;
     color: rgb(248, 173, 68);
 }
 
+.img-inactive {
+    filter: grayscale(100%);
+}
 
-@media (min-width: 0px) and (max-width: 1299px) {
+@media (min-width: 0px) and (max-width: 1399px) {
     .card-display {
-        padding: 0vw 2vw 0vw 2vw;
+        padding: 0vw 14vw 0vw 14vw;
     }
 }
 
-@media (min-width: 1300px) and (max-width: 2000px) {
+@media (min-width: 1400px) and (max-width: 2000px) {
     .card-display {
         padding: 0vw 10vw 0vw 10vw;
     }

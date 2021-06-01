@@ -1,10 +1,10 @@
 <!-- <div class="container-fluid" style="background-image: url('../../assets/Users_Background.png'); background-position-x: center; background-position-y: center;"> -->
 <div class="container-fluid">
     <div class="row card-display" align="center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let user of userList">
-            <ng-container *ngIf="user.name != ''">
+        <ng-container *ngFor="let user of userList">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngIf="user.status != 2">
                 <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
-                    <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" alt="Card image cap">
+                    <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" [class.img-inactive] = "user.status === 1">
                 </div>
                 <div class="filled-box" style="width: 70%; margin-top: 2vw;">
                     <div class="container">
@@ -13,18 +13,18 @@
                         <a href="#"><mat-icon class="mb-3" style="color: rgb(248, 173, 68);">visibility</mat-icon></a>
                     </div>
                 </div>
-            </ng-container>
-            <ng-container *ngIf="user.name == ''">
-                <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
-                    <a routerLink="../add-new-user"> 
-                        <img class="card-img-top user-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
-                    </a>
-                </div>
-                <div class="filled-box" style="width: 70%; margin-top: 2vw; background-color: transparent;">
-                    <p class="filled-box-title my-4">Add User</p>
-                    <p class="filled-box-subtitle">Empty Slot</p>
-                </div>
-            </ng-container>
+            </div>
+        </ng-container>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
+                <a routerLink="../add-new-user"> 
+                    <img class="card-img-top user-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
+                </a>
+            </div>
+            <div class="filled-box" style="width: 70%; margin-top: 2vw; background-color: transparent;">
+                <p class="filled-box-title my-4">Add User</p>
+                <p class="filled-box-subtitle">Empty Slot</p>
+            </div>
         </div>
     </div>
 </div>

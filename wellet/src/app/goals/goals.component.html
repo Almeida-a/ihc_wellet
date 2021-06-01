@@ -1,24 +1,29 @@
 <div class="container-fluid">
     <div class="row card-display" align="center">
-        <div class="row">
+        <div class="row" style="margin-top: -1vw;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
-                <img src="../../assets/piggy-bank.svg" style="max-width: 12%;">
+                <img src="../../assets/piggy-bank.svg" style="min-height: 70px; max-width: 15%; margin-bottom: 1vw; margin-right: 1vw;">
                 <button class="btn" type="submit">CREATE NEW GOAL</button>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let goal of goalList">
-                <ng-container *ngIf="goal.name != ''">
+                <ng-container *ngIf="goal.state == 'progress'">
                     <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
                         <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
                     </div>
-                    <!-- <div class="filled-box" style="width: 70%; margin-top: 2vw;">
-                        <div class="container">
-                            <p class="filled-box-title my-4">{{goal.name}}</p>
-                            <p class="filled-box-subtitle">"{{goal.description}}"</p>
-                            <a href="#"><mat-icon class="mb-3" style="color: rgb(248, 173, 68);">visibility</mat-icon></a>
-                        </div>
-                    </div> -->
+                </ng-container>
+                <ng-container *ngIf="goal.state == 'done'">
+                    <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
+                        <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
+                        <div class="overlay-text">COMPLETED</div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="goal.state == 'empty'">
+                    <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
+                        <img class="card-img-top goal-image" style="border-radius: 20px; opacity: 30%;" src="../../assets/no_image_background.jpg" alt="Card image cap">
+                        <div class="overlay-text" style="background-color:  rgba(0, 0, 0, 0.096);">EMPTY SLOT</div>
+                    </div>
                 </ng-container>
                 <ng-container *ngIf="goal.name == ''">
                     <div class="card mx-auto" style="width: 70%; border-radius: 20px;">

@@ -5,6 +5,7 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngIf="user.status != 2">
                 <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
                     <img class="card-img-top user-image" style="border-radius: 20px;" src="{{user.image}}" [class.img-inactive] = "user.status === 1">
+                    <div *ngIf="user.status === 1" class="overlay-text">INVITE PENDENT</div>
                 </div>
                 <div class="filled-box" style="width: 70%; margin-top: 2vw;">
                     <div class="container">

@@ -15,29 +15,26 @@
                         <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
                         <div class="overlay-text overlay-hover" style="padding: 2vw">
                             <p>{{goal.name}}</p>
+                            <p>Saved amount: {{goal.currentValue | currency: "EUR"}}</p>
                             <p>Goal: {{goal.finalValue | currency: "EUR"}}</p>
                             <p>Deadline: {{goal.deadline | date: "shortDate"}}</p>
                         </div>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="goal.state == 'done'">
+                <ng-container *ngIf="goal.state === 'done'">
                     <div class="overlay-image card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
                         <img class="card-img-top goal-image" style="border-radius: 20px; opacity: 50%" src="{{goal.image}}" alt="Card image cap">
                         <div class="overlay-text overlay-hide">COMPLETED</div>
                         <div class="overlay-text overlay-hover" style="padding: 2vw">
                             <p>{{goal.name}}</p>
+                            <p>Saved amount: {{goal.currentValue | currency: "EUR"}}</p>
                             <p>Goal: {{goal.finalValue | currency: "EUR"}}</p>
                             <p>Deadline: {{goal.deadline | date: "shortDate"}}</p>
                         </div>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="goal.state == 'empty'">
-                    <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
-                        <img class="card-img-top goal-image" style="border-radius: 20px; opacity: 30%;" src="../../assets/no_image_background.jpg" alt="Card image cap">
-                        <div class="overlay-text" style="background-color:  rgba(0, 0, 0, 0.096);">EMPTY SLOT</div>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="goal.name == ''">
+
+                <ng-container *ngIf="goal.name === ''">
                     <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
                         <a routerLink="../add-new-goal"> 
                             <img class="card-img-top goal-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">

@@ -3,9 +3,11 @@
     <ul *ngFor="let item of items">
         <div class="grid-container">
             <!-- Left Icon -->
-            <p class="icon" style="align-self: center;">ICON</p>
+            <p class="bothRows" style="align-self: center;">ICON</p>
             <!-- Right Icon: Smiley face -->
-            <p class="icon" style="grid-column: 3; align-self: center;">SMILEY</p>
+            <p class="bothRows" style="grid-column: 4; align-self: center;">SMILEY</p>
+            <!-- Center void -->
+            <p class="bothRows" style="grid-column: 3; width: 500px;"></p>
             <p class="grid-item">{{item.label}}</p>
             <p class="grid-item">{{item.time.hours}}:{{item.time.minutes}}h</p>
             <p class="grid-item">{{item.info}}</p>

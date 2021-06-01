@@ -2,12 +2,13 @@
 <ul class="items">
     <ul *ngFor="let item of items">
         <div class="grid-container">
-            <!-- Icon -->
+            <!-- Left Icon -->
+            <p class="icon" style="align-self: center;">ICON</p>
+            <!-- Right Icon: Smiley face -->
+            <p class="icon" style="grid-column: 3; align-self: center;">SMILEY</p>
             <p class="grid-item">{{item.label}}</p>
-            <!-- <p class="grid-item"></p> -->
             <p class="grid-item">{{item.time.hours}}:{{item.time.minutes}}h</p>
             <p class="grid-item">{{item.info}}</p>
-            <!-- <p class="grid-item"></p> -->
             <p class="grid-item">{{item.date}}</p>
         </div>
         <br/>

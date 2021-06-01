@@ -1,7 +1,15 @@
 <div role="navigation">
     <nav>
-        <a style="padding: 5px;"
+        <!-- TODOs: 
+                    - add dynamism (?);
+                    - add style; 
+                -->
+        <a style="padding: 5px; background-color: orange;"
             href="#"
-            *ngFor="let item of [].constructor(10); let i = index">{{i}}</a>
+            *ngFor="let item of [].constructor(totalPages); let i = index">
+            <button style="background-color: inherit; border-radius: 5px;">
+                {{i}}
+            </button>
+        </a>
     </nav>
 </div>

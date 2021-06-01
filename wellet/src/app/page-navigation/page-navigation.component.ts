@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNavigationComponent implements OnInit {
 
+  currentPage !: number;
+  totalPages !: number;
+
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.currentPage = 5;
+    this.totalPages = 10;
   }
 
 }

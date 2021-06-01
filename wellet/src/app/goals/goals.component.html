@@ -11,14 +11,24 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let goal of goalList">
                 <ng-container *ngIf="goal.state == 'progress'">
-                    <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
+                    <div class="overlay-image card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
                         <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
+                        <div class="overlay-text overlay-hover" style="padding: 2vw">
+                            <p>{{goal.name}}</p>
+                            <p>Goal: {{goal.finalValue | currency: "EUR"}}</p>
+                            <p>Deadline: {{goal.deadline | date: "shortDate"}}</p>
+                        </div>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="goal.state == 'done'">
-                    <div class="card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
-                        <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
-                        <div class="overlay-text">COMPLETED</div>
+                    <div class="overlay-image card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
+                        <img class="card-img-top goal-image" style="border-radius: 20px; opacity: 50%" src="{{goal.image}}" alt="Card image cap">
+                        <div class="overlay-text overlay-hide">COMPLETED</div>
+                        <div class="overlay-text overlay-hover" style="padding: 2vw">
+                            <p>{{goal.name}}</p>
+                            <p>Goal: {{goal.finalValue | currency: "EUR"}}</p>
+                            <p>Deadline: {{goal.deadline | date: "shortDate"}}</p>
+                        </div>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="goal.state == 'empty'">
@@ -42,3 +52,17 @@
         </div> 
     </div>
 </div>
+
+
+<!-- <div class="overlay-image"><a href="LINK_URL">
+    <img class="image" src="IMAGE" alt="Alt text" />
+    <div class="normal">
+      <div class="text">Image + text
+        ORIGINAL</div>
+    </div>
+    <div class="hover">
+      <div class="text">Background + text
+        HOVER</div>
+    </div>
+  </a></div> -->
+  

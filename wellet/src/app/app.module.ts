@@ -39,6 +39,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
+import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AddNewTransactionComponent } from './add-new-transaction/add-new-transa
     PieChartComponent,
     AddNewUserComponent,
     AddNewTransactionComponent,
+    AddNewGoalComponent,
   ],
   imports: [
     BrowserModule,

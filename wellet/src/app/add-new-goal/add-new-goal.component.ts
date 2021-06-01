@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Goal } from '../../utils/Goal';
 
 @Component({
   selector: 'app-add-new-goal',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNewGoalComponent implements OnInit {
 
-  constructor() { }
+  currentGoal!: Goal; 
+  goalAdded: boolean;
+
+  constructor() {
+    this.goalAdded = false;
+   }
 
   ngOnInit(): void {
+    this.currentGoal = new Goal("progress", "Undefined", 0, 0, new Date());
+    this.goalAdded = false;
   }
 
 }

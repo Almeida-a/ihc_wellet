@@ -1,1 +1,150 @@
-<p>add-new-goal works!</p>
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <div class="transparent-box">
+                <p class="transparent-box-title m-4 mt-2">Goal details</p>
+                <form class="m-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="transparent-box-subtitle">Name</label>
+                        <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Expense name" [(ngModel)]="currentTransaction.name" [disabled]="transactionAdded">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseCategoryInput" class="transparent-box-subtitle">Category</label>
+                        <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput" aria-describedby="emailHelp"
+                            placeholder="Enter category" [(ngModel)]="currentTransaction.category" [disabled]="transactionAdded">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount" class="transparent-box-subtitle">Start ammount</label>
+                        <div class="input-group">
+                            <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
+                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                            <div class="input-group-append">
+                                <span class="input-group-text">€</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount" class="transparent-box-subtitle">Goal value</label>
+                        <div class="input-group">
+                            <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
+                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                            <div class="input-group-append">
+                                <span class="input-group-text">€</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount" class="transparent-box-subtitle">Deadline</label>
+                        <div class="input-group">
+                            <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
+                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                            <div class="input-group-append">
+                                <span class="input-group-text">€</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="filled-box">
+                <div class="container">
+                    <p class="filled-box-title my-4">Preview</p>
+
+                    <div id="preview_boxes" *ngIf="!transactionAdded">
+                        <div class="white-box my-2" id="preview_type">
+                            <div class="row">
+                                <div class="col-2">
+    
+                                </div>
+                                <div class="col">
+                                    <p class="white-box-title mt-2 mb-0">Name</p>
+                                    <p class="white-box-text mb-2">{{currentTransaction.name || "Unknown"}}</p>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="white-box my-2" id="preview_type">
+                            <div class="row">
+                                <div class="col-2">
+    
+                                </div>
+                                <div class="col">
+                                    <p class="white-box-title mt-2 mb-0">Type</p>
+                                    <p class="white-box-text mb-2">{{currentTransaction.type}}</p>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="white-box my-2" id="preview_value">
+                            <div class="row">
+                                <div class="col-2">
+    
+                                </div>
+                                <div class="col">
+                                    <p class="white-box-title mt-2 mb-0">Value</p>
+                                    <p class="white-box-text mb-2">{{(currentTransaction.value | currency: 'EUR') || "€0.00"}}</p>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="white-box my-2" id="preview_category">
+                            <div class="row">
+                                <div class="col-2">
+                                </div>
+                                <div class="col">
+                                    <p class="white-box-title mt-2 mb-0">Category</p>
+                                    <p class="white-box-text mb-2">{{currentTransaction.category || "Unknown"}}</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="white-box my-2 mb-4" id="preview_category">
+                            <div class="row">
+                                <div class="col-2">
+                                </div>
+                                <div class="col">
+                                    <p class="white-box-title mt-2 mb-0">Visibility</p>
+                                    <p class="white-box-text mb-2">{{currentTransaction.visibility || "Visible"}}</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="onSubmit()">Add Transaction</button>
+                        </div>
+
+                    </div> 
+                    
+                    <div id="transactionAddConfirmation" *ngIf="transactionAdded">
+
+                        <div class="white-box my-2 mb-4" id="preview_category">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <p class="white-box-title m-4">Transaction Successfully Added!</p>
+                                    <mat-icon class="transaction-accepted-icon mt-0 mb-4">check_circle</mat-icon>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mb-3 mt-2">
+                                <div class="col-6">
+                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New Transaction</button>
+                                </div>
+                                <div class="col-6">
+                                    <a routerLink="../history">
+                                        <button class="btn btn-yellow w-100 mx-auto text-center">History</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

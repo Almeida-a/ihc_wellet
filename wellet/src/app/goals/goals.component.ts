@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Goal } from './goal';
-import { GOALS } from './account-goals'
+import { Goal } from '../../utils/Goal';
+import { goals } from "src/storage/GoalsStorage";
 
 @Component({
   selector: 'app-goals',
@@ -11,7 +11,7 @@ export class GoalsComponent implements OnInit {
 
   goalList: Goal[];
   constructor() { 
-    this.goalList = GOALS;
+    this.goalList = goals;
   }
 
   ngOnInit(): void {

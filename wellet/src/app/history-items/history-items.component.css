@@ -10,16 +10,18 @@ div.round {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  background-color: lightyellow;
+  /* background-color: lightyellow; */
   padding: 5px;
   align-content: space-around;
-  border-radius: 5px;
+  border-style: solid;
+  border-radius: 15px;
   border-color: orange;
-  height: fit-content;
+  border-width: 2px;
+  height: 70px;
 }
 .grid-item {
-  padding: 20px;
-  font-size: 20px;
+  /* padding: 0px; #Not needed */
+  font-size: 15px;
   text-align: center;
   border-radius: 5px;
 }

@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RouteInfo } from '../RouteInfo';
 import { routes_names } from '../app-routing.module'
+import { User } from 'src/utils/User';
 
 @Component({
   selector: 'app-topbar',
@@ -12,7 +13,7 @@ import { routes_names } from '../app-routing.module'
 export class TopbarComponent implements OnInit {
 
   @Input()
-  currentUser!: string;
+  currentUser!: User;
   currentScreen?: string;
   
   navigationSubscription: Subscription;

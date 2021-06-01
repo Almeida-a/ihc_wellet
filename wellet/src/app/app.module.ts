@@ -40,6 +40,7 @@ import { ChartsModule } from 'ng2-charts';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
+import { PageNavigationComponent } from './page-navigation/page-navigation.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
     AddNewUserComponent,
     AddNewTransactionComponent,
     AddNewGoalComponent,
+    PageNavigationComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
+  items !: string[];
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.items = [
+      "Action", "User", "Date", "Value"
+    ];
+
   }
 
 }

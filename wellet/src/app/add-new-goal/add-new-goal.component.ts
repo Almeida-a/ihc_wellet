@@ -10,6 +10,7 @@ export class AddNewGoalComponent implements OnInit {
 
   currentGoal!: Goal; 
   goalAdded: boolean;
+  currentGoalDate?: string;
 
   constructor() {
     this.goalAdded = false;
@@ -21,8 +22,15 @@ export class AddNewGoalComponent implements OnInit {
   }
   
   createGoal(): void {
+    this.parseDate();
     this.currentGoal.save();
     this.goalAdded = true;
+  }
+
+  parseDate(): void {
+    if (this.currentGoalDate) {
+      this.currentGoal.deadline = new Date(this.currentGoalDate);
+    }
   }
 
 }

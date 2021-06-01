@@ -44,7 +44,8 @@ export const routes_names: RouteInfo[] = [
   { routeLink: 'users', routeName: 'Users' },
   { routeLink: 'users', routeName: 'Users' },
   { routeLink: 'add-new-user', routeName: 'Add User' },
-  { routeLink: 'add-new-transaction', routeName: 'Add Transaction' }
+  { routeLink: 'add-new-transaction', routeName: 'Add Transaction' },
+  { routeLink: 'add-new-goal', routeName: 'Add Goal' },
 ];
 
 @NgModule({

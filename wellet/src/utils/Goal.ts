@@ -30,7 +30,7 @@ export class Goal {
         return this._finalValue;
     }
 
-    public get deadline() : Date | undefined {
+    public get deadline() : Date {
         return this._deadline;
     }
 
@@ -64,8 +64,8 @@ export class Goal {
         this._finalValue = newValue;
     }
 
-    public set deadline(newValue: Date | undefined) {
-        this.deadline = newValue;
+    public set deadline(newValue: Date) {
+        this._deadline = newValue;
     }
 
     public set image(newValue: string | undefined) {

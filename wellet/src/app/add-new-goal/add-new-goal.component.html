@@ -5,7 +5,7 @@
                 <p class="transparent-box-title m-4 mt-2">Goal details</p>
                 <form class="m-4">
                     <div class="form-group">
-                        <label for="exampleInputEmail1" class="transparent-box-subtitle">Name</label>
+                        <label for="exampleInputEmail1" class="transparent-box-subtitle">Name*</label>
                         <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="Goal name" [(ngModel)]="currentGoal.name"  [disabled]="goalAdded">
                     </div>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="expenseAmount" class="transparent-box-subtitle">Goal value</label>
+                        <label for="expenseAmount" class="transparent-box-subtitle">Goal value*</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
                                 aria-label="Amount (to the nearest euro)" placeholder="Insert final value" 
@@ -37,12 +37,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="expenseAmount" class="transparent-box-subtitle">Deadline</label>
+                        <label for="expenseAmount" class="transparent-box-subtitle">Deadline*</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="date" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Insert deadline" 
-                                [(ngModel)]="currentGoal.deadline" [disabled]="goalAdded">
-                            <!--<div class="input-group-append">
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert deadline"
+                                [(ngModel)]="currentGoalDate" [disabled]="goalAdded">
+                            <!--<div class(ngModelChange)="updatedate($event)" [ngModel]="exp.dateTo |date:'yyyy-MM-dd'"
                                 <span class="input-group-text">€</span>
                             </div>-->
                         </div>
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Deadline</p>
-                                    <p class="white-box-text mb-2">{{currentGoal.deadline | date: "shortD"}}</p>
+                                    <p class="white-box-text mb-2">{{currentGoalDate || (currentGoal.deadline | date: 'shortDate')}}</p>
                                 </div>
                             </div>
                         </div>

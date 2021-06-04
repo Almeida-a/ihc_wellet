@@ -13,7 +13,7 @@ export class PageNavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.currentPage = 5;
+    this.currentPage = 0;
     this.totalPages = 10;
   }
 

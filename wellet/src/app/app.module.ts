@@ -41,6 +41,7 @@ import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 import { PageNavigationComponent } from './page-navigation/page-navigation.component';
+import { OverallReportComponent } from './overall-report/overall-report.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PageNavigationComponent } from './page-navigation/page-navigation.compo
     AddNewTransactionComponent,
     AddNewGoalComponent,
     PageNavigationComponent,
+    OverallReportComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+.background {
+    background-image: url('../../assets/simple_swirls_design_blue_background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}

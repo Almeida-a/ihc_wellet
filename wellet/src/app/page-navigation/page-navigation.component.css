@@ -5,3 +5,11 @@
     border-top-color: transparent;
     border-bottom-color: transparent;
 }
+
+.currentPage {
+    background-color: orange;
+}
+
+.otherPage {
+    background-color: transparent;
+}

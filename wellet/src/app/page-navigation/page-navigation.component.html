@@ -2,13 +2,16 @@
     <nav>
         <!-- TODOs: 
                     - add dynamism (?);
-                    - add style; 
-                -->
-        <a class="nav-items"
+                 -->
+        <a [ngClass]="{
+                'currentPage': i==currentPage,
+                'otherPage': i!=currentPage,
+                'nav-items': true
+            }"
             href="#"
             *ngFor="let item of [].constructor(totalPages); let i = index">
-            <button style="background-color: transparent; border: transparent;">
-                {{i}}
+            <button style="border: transparent; background-color: inherit;">
+                {{i+1}}
             </button>
         </a>
     </nav>

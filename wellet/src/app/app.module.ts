@@ -42,6 +42,7 @@ import { AddNewTransactionComponent } from './add-new-transaction/add-new-transa
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 import { PageNavigationComponent } from './page-navigation/page-navigation.component';
 import { OverallReportComponent } from './overall-report/overall-report.component';
+import { SoloGraphComponent } from './solo-graph/solo-graph.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { OverallReportComponent } from './overall-report/overall-report.componen
     AddNewGoalComponent,
     PageNavigationComponent,
     OverallReportComponent,
+    SoloGraphComponent,
   ],
   imports: [
     BrowserModule,

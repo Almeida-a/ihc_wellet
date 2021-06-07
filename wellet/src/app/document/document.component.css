@@ -1,0 +1,63 @@
+.filled-box {
+    border-style: solid;
+    border-color: #FFD185;
+    border-width: 2px;
+    border-radius: 1rem;
+    background-color: #FFD185;
+}
+  
+.filled-box-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: white;
+}
+  
+.filled-box-subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+}
+  
+.filled-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: white
+}
+
+.white-box {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 1rem;
+    background-color: white;
+}
+  
+.white-box-title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1rem;
+    color: black;
+}
+  
+.white-box-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgb(248, 173, 68);
+}
+
+.btn-white {
+    background-color: white;
+    border-color: white;
+    color: black;
+    font-family: 'Oswald';
+    border-radius: 15px;
+}
+
+.btn-white:hover {
+    background-color: rgb(240, 240, 240);
+    border-color: rgb(240, 240, 240);
+}

@@ -37,12 +37,18 @@ import { FilterComponent } from './filter/filter.component';
 
 import { PieChartComponent } from './pie-chart/pie-chart.component'; 
 import { ChartsModule } from 'ng2-charts';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
+
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 import { PageNavigationComponent } from './page-navigation/page-navigation.component';
 import { OverallReportComponent } from './overall-report/overall-report.component';
 import { SoloGraphComponent } from './solo-graph/solo-graph.component';
+import { GoalDetailsComponent } from './goal-details/goal-details.component';
+import { DocumentComponent } from './document/document.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -67,6 +73,8 @@ import { SoloGraphComponent } from './solo-graph/solo-graph.component';
     PageNavigationComponent,
     OverallReportComponent,
     SoloGraphComponent,
+    GoalDetailsComponent,
+    DocumentComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,9 +97,12 @@ import { SoloGraphComponent } from './solo-graph/solo-graph.component';
     MatFormFieldModule,
 
     ChartsModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

@@ -32,11 +32,10 @@ export class TopbarComponent implements OnInit {
 
   updateScreenName(): void {
     for (let i: number = 0; i < this.routesInfo.length; i++)
-	  	if (this.routesInfo[i].routeLink === this.router.url.replace("/", ""))
+	  	if (this.router.url.replace("/", "").includes(this.routesInfo[i].routeLink))
 			  this.currentScreen = this.routesInfo[i].routeName;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

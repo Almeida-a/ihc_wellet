@@ -39,7 +39,6 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
-
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
@@ -98,7 +97,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
     ChartsModule,
     FormsModule,
-    PdfViewerModule
+    PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

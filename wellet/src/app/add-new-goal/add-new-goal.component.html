@@ -6,19 +6,21 @@
                 <form class="m-4">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="transparent-box-subtitle">Name*</label>
-                        <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Goal name" [(ngModel)]="currentGoal.name"  [disabled]="goalAdded">
+                        <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Goal name" [(ngModel)]="currentGoal.name"
+                            [disabled]="goalAdded">
                     </div>
                     <div class="form-group">
                         <label for="expenseCategoryInput" class="transparent-box-subtitle">Description</label>
-                        <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput" aria-describedby="emailHelp"
-                            placeholder="Enter description" [(ngModel)]="currentGoal.description" [disabled]="goalAdded">
+                        <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput"
+                            aria-describedby="emailHelp" placeholder="Enter description"
+                            [(ngModel)]="currentGoal.description" [disabled]="goalAdded">
                     </div>
                     <div class="form-group">
                         <label for="expenseAmount" class="transparent-box-subtitle">Start Amount</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Insert starting amount" 
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert starting amount"
                                 [(ngModel)]="currentGoal.currentValue" [disabled]="goalAdded">
                             <div class="input-group-append">
                                 <span class="input-group-text">€</span>
@@ -29,7 +31,7 @@
                         <label for="expenseAmount" class="transparent-box-subtitle">Goal value*</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Insert final value" 
+                                aria-label="Amount (to the nearest euro)" placeholder="Insert final value"
                                 [(ngModel)]="currentGoal.finalValue" [disabled]="goalAdded">
                             <div class="input-group-append">
                                 <span class="input-group-text">€</span>
@@ -54,48 +56,49 @@
         <div class="col">
             <div class="filled-box">
                 <div class="container">
-                    <p class="filled-box-title my-4">Preview</p>
+                    <p class="filled-box-title my-4" align="center">Preview</p>
 
-                    <div id="preview_boxes" *ngIf="!goalAdded">
+                    <!--<div id="preview_boxes" *ngIf="!goalAdded">-->
+                    <div id="preview_boxes">
 
                         <div class="white-box my-2" id="preview_type">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Name</p>
                                     <p class="white-box-text mb-2">{{currentGoal.name || "Goal Name"}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="white-box my-2" id="preview_type">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Description</p>
                                     <p class="white-box-text mb-2">{{currentGoal.description || "Goal Description"}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
                         <div class="white-box my-2" id="preview_value">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Starting Amount</p>
                                     <p class="white-box-text mb-2">{{currentGoal.currentValue | currency: 'EUR'}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="white-box my-2" id="preview_category">
                             <div class="row">
                                 <div class="col-2">
@@ -106,25 +109,58 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="white-box my-2 mb-4" id="preview_category">
                             <div class="row">
                                 <div class="col-2">
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Deadline</p>
-                                    <p class="white-box-text mb-2">{{currentGoalDate || (currentGoal.deadline | date: 'shortDate')}}</p>
+                                    <p class="white-box-text mb-2">{{currentGoalDate || (currentGoal.deadline | date:
+                                        'shortDate')}}</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row">
-                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="createGoal()">Add Goal</button>
+                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="createGoal()" data-toggle="modal" data-target="#myModal">Add
+                                Goal</button>
                         </div>
 
-                    </div> 
-                    
-                    <div id="transactionAddConfirmation" *ngIf="goalAdded">
+                    </div>
+
+                    <!-- Transaction added Modal -->
+                    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3 class="modal-title my-4">Goal Added!</h3>
+                                            <mat-icon class="transaction-accepted-icon mt-0 mb-4">check_circle
+                                            </mat-icon>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-auto mb-3 mt-2">
+                                        <div class="col-6">
+                                            <button class="btn btn-yellow w-100 mx-auto text-center"
+                                                data-dismiss="modal" (click)="ngOnInit()">New
+                                                Goal</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <a routerLink="../dashboard">
+                                                <button class="btn btn-yellow w-100 mx-auto text-center"
+                                                    data-dismiss="modal">Close</button>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div id="transactionAddConfirmation" *ngIf="goalAdded">
 
                         <div class="white-box my-2 mb-4" id="preview_category">
                             <div class="row">
@@ -135,7 +171,8 @@
                             </div>
                             <div class="row mx-auto mb-3 mt-2">
                                 <div class="col-6">
-                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New Goal</button>
+                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New
+                                        Goal</button>
                                 </div>
                                 <div class="col-6">
                                     <a routerLink="../goals">
@@ -145,11 +182,10 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
         </div>
     </div>
 </div>
-

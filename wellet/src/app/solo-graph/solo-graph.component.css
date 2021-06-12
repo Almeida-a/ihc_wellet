@@ -1,11 +1,5 @@
-@media (min-width: 0px) and (max-width: 1399px) {
-    .chart {
-        min-width: 200px;
-    }
-}
-
-@media (min-width: 1400px) and (max-width: 2000px) {
-    .chart {
-        max-width: 700px;
-    }
-}
+#chart {
+    max-width: 650px;
+    margin: 35px auto;
+  }
+  

@@ -1,56 +1,79 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
-import { BaseChartDirective, Label } from 'ng2-charts';
-import * as pluginAnnotations from 'chartjs-plugin-annotation';
+import { Component, ViewChild } from "@angular/core";
+
+import {
+  ChartComponent,
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexDataLabels,
+  ApexTitleSubtitle,
+  ApexStroke,
+  ApexGrid
+} from "ng-apexcharts";
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  dataLabels: ApexDataLabels;
+  grid: ApexGrid;
+  stroke: ApexStroke;
+  title: ApexTitleSubtitle;
+};
 
 @Component({
-  selector: 'app-solo-graph',
-  templateUrl: './solo-graph.component.html',
-  styleUrls: ['./solo-graph.component.css']
+  selector: "app-solo-graph",
+  templateUrl: "./solo-graph.component.html",
+  styleUrls: ["./solo-graph.component.css"]
 })
-export class SoloGraphComponent implements OnInit {
+export class SoloGraphComponent {
+  @ViewChild("chart") chart?: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
 
-  // Graph
-  public soloGraphOptions: (ChartOptions & { annotation: any }) = {
-    responsive: true,
-    annotation: {
-      annotations: [
+  constructor() {
+    this.chartOptions = {
+      series: [
         {
-          type: 'line',
-          mode: 'vertical',
-          scaleID: 'x-axis-0',
-          value: 'March',
-          borderColor: 'orange',
-          borderWidth: 2,
-          label: {
-            enabled: true,
-            fontColor: 'orange',
-            content: 'LineAnno'
-          }
-        },
+          name: "Food",
+          data: [350, 200, 350, 510, 490, 620, 300, 500, 148]
+        }
       ],
-    },
-  };
-  public soloGraphLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public soloGraphData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Expenses'},
-  ];
-  public soloGraphType: ChartType = 'line';
-  public soloGraphLegend= true;
-  public soloGraphColors = [
-    {
-      backgroundColor: ["grey", "orange"],
-    }
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
+      chart: {
+        height: 350,
+        type: "line",
+        zoom: {
+          enabled: false
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: "straight"
+      },
+      title: {
+        text: "Expenses: monthly",
+        align: "left"
+      },
+      grid: {
+        row: {
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5
+        }
+      },
+      xaxis: {
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep"
+        ]
+      }
+    };
   }
-
-  // events
-  public graphHovered({event, active}: {event: MouseEvent, active: {}[]}): void {
-    console.log(event, active);
-  }
-
 }

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-
+// Apex charts docs at: apexcharts.com
 import {
   ChartComponent,
   ApexAxisChartSeries,

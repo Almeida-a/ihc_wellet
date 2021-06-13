@@ -51,6 +51,7 @@ import { DocumentComponent } from './document/document.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { NgApexchartsModule } from "ng-apexcharts";
+import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
     SoloGraphComponent,
     GoalDetailsComponent,
     DocumentComponent,
+    StackedGraphComponent,
   ],
   imports: [
     BrowserModule,

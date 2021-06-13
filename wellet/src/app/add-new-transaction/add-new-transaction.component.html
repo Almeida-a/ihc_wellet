@@ -9,22 +9,28 @@
                     <div class="col-5">
                         <p class="transparent-box-subtitle">Type</p>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-yellow" [class.active]="!transactionAdded" (click)="onTypeChange('Expense')">
-                                <input type="radio" name="options" value="Expense" id="expenseOption" [disabled]="transactionAdded">Expense
+                            <label class="btn btn-yellow" [class.active]="!transactionAdded"
+                                (click)="onTypeChange('Expense')">
+                                <input type="radio" name="options" value="Expense" id="expenseOption"
+                                    [disabled]="transactionAdded">Expense
                             </label>
                             <label class="btn btn-yellow" (click)="onTypeChange('Income')">
-                                <input type="radio" name="options" id="incomeOption" [disabled]="transactionAdded">Income
+                                <input type="radio" name="options" id="incomeOption"
+                                    [disabled]="transactionAdded">Income
                             </label>
                         </div>
                     </div>
                     <div class="offset-1 col">
                         <p class="transparent-box-subtitle">Visibility</p>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-yellow" [class.active]="!transactionAdded" (click)="onVisibilityChange('Visible')">
-                                <input type="radio" name="options" id="option1" autocomplete="off" [disabled]="transactionAdded">Visible
+                            <label class="btn btn-yellow" [class.active]="!transactionAdded"
+                                (click)="onVisibilityChange('Visible')">
+                                <input type="radio" name="options" id="option1" autocomplete="off"
+                                    [disabled]="transactionAdded">Visible
                             </label>
                             <label class="btn btn-yellow" (click)="onVisibilityChange('Hidden')">
-                                <input type="radio" name="options" id="option2" autocomplete="off" [disabled]="transactionAdded">Hidden
+                                <input type="radio" name="options" id="option2" autocomplete="off"
+                                    [disabled]="transactionAdded">Hidden
                             </label>
                         </div>
                     </div>
@@ -34,14 +40,16 @@
                 <form class="m-4">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="transparent-box-subtitle">Name</label>
-                        <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Expense name" [(ngModel)]="currentTransaction.name" [disabled]="transactionAdded">
+                        <input type="text" name="transactionName" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Expense name"
+                            [(ngModel)]="currentTransaction.name" [disabled]="transactionAdded">
                     </div>
                     <div class="form-group">
                         <label for="expenseAmount" class="transparent-box-subtitle">Value</label>
                         <div class="input-group">
                             <input id="expenseAmount" name="transactionValue" type="number" class="form-control"
-                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount" [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
+                                aria-label="Amount (to the nearest euro)" placeholder="Payed amount"
+                                [(ngModel)]="currentTransaction.value" [disabled]="transactionAdded">
                             <div class="input-group-append">
                                 <span class="input-group-text">€</span>
                             </div>
@@ -49,8 +57,9 @@
                     </div>
                     <div class="form-group">
                         <label for="expenseCategoryInput" class="transparent-box-subtitle">Category</label>
-                        <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput" aria-describedby="emailHelp"
-                            placeholder="Enter category" [(ngModel)]="currentTransaction.category" [disabled]="transactionAdded">
+                        <input type="text" name="transactionCategory" class="form-control" id="expenseCategoryInput"
+                            aria-describedby="emailHelp" placeholder="Enter category"
+                            [(ngModel)]="currentTransaction.category" [disabled]="transactionAdded">
                     </div>
 
                 </form>
@@ -60,47 +69,49 @@
         <div class="col">
             <div class="filled-box">
                 <div class="container">
-                    <p class="filled-box-title my-4">Preview</p>
+                    <p class="filled-box-title my-4" align="center">Preview</p>
 
-                    <div id="preview_boxes" *ngIf="!transactionAdded">
+                    <!--<div id="preview_boxes" *ngIf="!transactionAdded">-->
+                    <div id="preview_boxes">
                         <div class="white-box my-2" id="preview_type">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Name</p>
                                     <p class="white-box-text mb-2">{{currentTransaction.name || "Unknown"}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="white-box my-2" id="preview_type">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Type</p>
                                     <p class="white-box-text mb-2">{{currentTransaction.type}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
                         <div class="white-box my-2" id="preview_value">
                             <div class="row">
                                 <div class="col-2">
-    
+
                                 </div>
                                 <div class="col">
                                     <p class="white-box-title mt-2 mb-0">Value</p>
-                                    <p class="white-box-text mb-2">{{(currentTransaction.value | currency: 'EUR') || "€0.00"}}</p>
+                                    <p class="white-box-text mb-2">{{(currentTransaction.value | currency: 'EUR') ||
+                                        "€0.00"}}</p>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="white-box my-2" id="preview_category">
                             <div class="row">
                                 <div class="col-2">
@@ -111,7 +122,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="white-box my-2 mb-4" id="preview_category">
                             <div class="row">
                                 <div class="col-2">
@@ -122,14 +133,44 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="row">
-                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="onSubmit()">Add Transaction</button>
+                            <button type="submit" class="btn btn-white w-75 mx-auto mb-3" (click)="onSubmit();" data-toggle="modal" data-target="#myModal">Add
+                                Transaction</button>
                         </div>
 
-                    </div> 
+                    </div>
                     
-                    <div id="transactionAddConfirmation" *ngIf="transactionAdded">
+                    <!-- Transaction added Modal -->
+                    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3 class="modal-title my-4">Transaction Added!</h3>
+                                            <mat-icon class="transaction-accepted-icon mt-0 mb-4">check_circle</mat-icon>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-auto mb-3 mt-2">
+                                        <div class="col-6">
+                                            <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal" (click)="ngOnInit()">New
+                                                Transaction</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <a routerLink="../dashboard">
+                                                <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal">Close</button>
+                                            </a>
+                                        </div>
+                                    </div>      
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--<div id="transactionAddConfirmation" *ngIf="transactionAdded">
 
                         <div class="white-box my-2 mb-4" id="preview_category">
                             <div class="row">
@@ -140,7 +181,8 @@
                             </div>
                             <div class="row mx-auto mb-3 mt-2">
                                 <div class="col-6">
-                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New Transaction</button>
+                                    <button class="btn btn-yellow w-100 mx-auto text-center" (click)="ngOnInit()">New
+                                        Transaction</button>
                                 </div>
                                 <div class="col-6">
                                     <a routerLink="../history">
@@ -150,8 +192,8 @@
                             </div>
                         </div>
 
-                    </div>
-
+                    </div>-->
+                
                 </div>
             </div>
         </div>

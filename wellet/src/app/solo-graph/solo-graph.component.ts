@@ -49,7 +49,7 @@ export class SoloGraphComponent {
         enabled: false
       },
       stroke: {
-        curve: "straight"
+        curve: "smooth"
       },
       title: {
         text: "Expenses: monthly",

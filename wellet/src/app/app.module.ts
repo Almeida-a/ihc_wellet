@@ -49,6 +49,9 @@ import { GoalDetailsComponent } from './goal-details/goal-details.component';
 import { DocumentComponent } from './document/document.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+import { NgApexchartsModule } from "ng-apexcharts";
+import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +77,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     SoloGraphComponent,
     GoalDetailsComponent,
     DocumentComponent,
+    StackedGraphComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +102,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     ChartsModule,
     FormsModule,
     PdfViewerModule,
+
+    // ApexChart for analytics
+    NgApexchartsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

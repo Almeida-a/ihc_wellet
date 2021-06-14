@@ -1,0 +1,32 @@
+<div class="container-fluid mt-4">
+    <div class="row my-3">
+        <div class="transparent-box">
+            <div class="row">
+                <div class="col-1 my-auto">
+                    <div class="d-flex justify-content-center">
+                        <mat-icon class="transaction-icon"><span class="material-icons-outlined">tab</span></mat-icon>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <p class="transparent-box-title mt-3 mb-2">{{workspace.name || "Unknown"}}</p>
+                    <p class="transparent-box-text mb-3">Users: {{workspace.users.length || "Unknown"}}</p>
+                </div>
+                <div class="col my-auto">
+                    <div class="d-flex justify-content-center">
+                        <a href="#">
+                            <mat-icon class="view-icon"><span class="material-icons-outlined">visibility</span></mat-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="col my-auto">
+                    <div class="d-flex justify-content-center">
+                        <a href="#">
+                            <mat-icon *ngIf="workspace.active === false" class="view-icon"><span class="material-icons-outlined">published_with_changes</span></mat-icon>
+                            <mat-icon *ngIf="workspace.active === true" class="view-icon"><span class="material-icons-outlined">done_all</span></mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

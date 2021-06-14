@@ -49,7 +49,7 @@
 }
 
 .user-image {
-    height: 45vh;
+    max-height: 45vh;
     object-fit: cover;
 }
 

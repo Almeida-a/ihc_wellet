@@ -10,12 +10,18 @@ import { users } from '../../storage/UsersStorage'
 export class UsersComponent implements OnInit {
 
   userList?: User[];
+  userToInspect?: User;
 
   constructor() {
     this.userList = users;
   }
 
   ngOnInit(): void {
+    console.log(this.userList);
+  }
+
+  userViewClick(user: User) : void {
+    this.userToInspect = user;
   }
 
 }

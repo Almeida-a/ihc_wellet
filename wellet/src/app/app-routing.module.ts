@@ -16,6 +16,7 @@ import { RouteInfo } from './RouteInfo';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
 import { GoalDetailsComponent } from './goal-details/goal-details.component';
 import { DocumentComponent } from './document/document.component';
+import { WorkspacesComponent } from './workspaces/workspaces.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'add-new-transaction', component: AddNewTransactionComponent },
   { path: 'add-new-goal', component: AddNewGoalComponent },
   { path: 'goal/:id', component: GoalDetailsComponent },
-  { path: 'document/:id', component: DocumentComponent }
+  { path: 'document/:id', component: DocumentComponent },
+  { path: 'workspaces', component: WorkspacesComponent }
 ];
 
 export const routes_names: RouteInfo[] = [
@@ -49,7 +51,8 @@ export const routes_names: RouteInfo[] = [
   { routeLink: 'add-new-transaction', routeName: 'Add Transaction' },
   { routeLink: 'add-new-goal', routeName: 'Add Goal' },
   { routeLink: 'goal', routeName: 'Goal Details' },
-  { routeLink: 'document', routeName: 'Document' }
+  { routeLink: 'document', routeName: 'Document' },
+  { routeLink: 'workspaces', routeName: 'Workspaces' }
 ];
 
 @NgModule({

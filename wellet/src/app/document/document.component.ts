@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentComponent implements OnInit {
 
-  pdfSrc = "../../assets/PDS.pdf";
+  pdfSrc = "../../assets/FaturaEDP.pdf";
 
   constructor() { }
 

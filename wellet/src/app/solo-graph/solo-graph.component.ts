@@ -43,8 +43,8 @@ export type ChartOptions = {
   styleUrls: ["./solo-graph.component.css"]
 })
 export class SoloGraphComponent {
-  @ViewChild("chart", { static: false }) chart: ChartComponent;
-  public chartOptions: Partial<ChartOptions>;
+  @ViewChild("chart", { static: false }) chart!: ChartComponent;
+  public chartOptions!: Partial<ChartOptions>;
   public activeOptionButton = "all";
   public updateOptionsData = {
     "1m": {

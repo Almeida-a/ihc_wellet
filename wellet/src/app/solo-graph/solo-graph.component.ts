@@ -153,7 +153,7 @@ export class SoloGraphComponent {
   public updateOptions(option: any): void {
     this.activeOptionButton = option;
     this.chart.updateOptions(this.updateOptionsData[option], false, true, true);
-    // continue here... [refactoring solo-graph]
+    // continue here... [refactoring solo-graph, but error on option]
   }
 
   public getExpensesData = function(category: string) : number[] {
@@ -162,7 +162,9 @@ export class SoloGraphComponent {
     // ...
     // Filter transactions where t.category()==category
     // ...
-    // Get their dates and values
+    // Get their dates and values:
+    //  Parse data to -> data format consumable by the chart
+    //  ...
 
     return [-1];
   }

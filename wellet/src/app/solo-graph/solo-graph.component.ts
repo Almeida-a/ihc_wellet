@@ -10,6 +10,8 @@ import {
   ApexStroke,
   ApexGrid
 } from "ng-apexcharts";
+import { expenses } from "src/storage/ExpensesStorage";
+import { Transaction } from "src/utils/Transaction";
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -35,7 +37,7 @@ export class SoloGraphComponent {
       series: [
         {
           name: "Food",
-          data: [350, 200, 350, 510, 490, 620, 300, 500, 148]
+          data: this.getExpensesData("Food"),
         }
       ],
       chart: {
@@ -62,18 +64,33 @@ export class SoloGraphComponent {
         }
       },
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep"
-        ]
+        type: "numeric",
+        axisTicks: {
+          show: true,
+        }
       }
     };
   }
+
+  public getExpensesData = function(category: string) : (number | null)[] {
+    
+    var expensesData: (number | null)[];// [number, number | null][]; case datetime axis is possible
+    var expensesTmp: Transaction[];
+    // Get all (expenses) transactions 
+    // =expenses object
+    // Filter transactions where t.category()==category
+    expensesTmp=expenses.filter(e=>e.category==category);
+    // Get their dates and values:
+    //  Parse data to -> data format consumable by the chart (expensesData = cast(expensesTmp))
+    expensesData = expensesTmp.map(e=>{
+      if(e.value==undefined) {
+        return null;
+      } else {
+        return e.value;
+      }
+    }); // is it possible to get transaction date ?
+
+    return expensesData;
+  }
+
 }

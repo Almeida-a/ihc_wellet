@@ -10,11 +10,18 @@ import { goals } from "src/storage/GoalsStorage";
 export class GoalsComponent implements OnInit {
 
   goalList: Goal[];
+
+  inspectedGoal?: Goal;
+
   constructor() { 
     this.goalList = goals;
   }
 
   ngOnInit(): void {
+  }
+
+  setInspectedGoal(goal: Goal) : void {
+    this.inspectedGoal = goal;
   }
 
 }

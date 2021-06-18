@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MENU } from './menu';
 import { MenuItem } from './menu_item';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { User } from 'src/utils/User';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class SidebarComponent implements OnInit {
 
+  @Input()
+  currentUser!: User;
   menuItems: MenuItem[];
   selectedItem: MenuItem;
   navigationSubscription: Subscription;

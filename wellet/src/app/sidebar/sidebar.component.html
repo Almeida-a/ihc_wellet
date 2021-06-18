@@ -1,24 +1,29 @@
 <div class="d-flex flex-column flex-shrink-0 sb-additional-style">
-    <span class="d-block p-3 text-decoration-none mx-auto mb-4 mt-3">
-        <mat-icon class="mx-auto" style="color: white; transform: scale(1.8);">bubble_chart</mat-icon>
-    </span>
-    <ul class="nav nav-flush flex-column mb-auto text-center">
-      <li *ngFor="let item of menuItems" class="nav-item">
-        <a routerLink="{{item.route}}" class="nav-link py-3" (click)="onMenuItemClick(item)" [class.active]="item === selectedItem" title="{{item.name}}" data-bs-toggle="tooltip" data-bs-placement="right">
-          <mat-icon>{{item.icon}}</mat-icon>
-        </a>
-      </li>
-    </ul>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+  <span class="d-block p-3 text-decoration-none mx-auto mb-4 mt-3">
+    <mat-icon class="mx-auto" style="color: white; transform: scale(1.8);">bubble_chart</mat-icon>
+  </span>
+  <ul class="nav nav-flush flex-column mb-auto text-center">
+    <li *ngFor="let item of menuItems" class="nav-item">
+      <a routerLink="{{item.route}}" class="nav-link py-3" (click)="onMenuItemClick(item)"
+        [class.active]="item === selectedItem" title="{{item.name}}" data-bs-toggle="tooltip" data-bs-placement="right">
+        <mat-icon>{{item.icon}}</mat-icon>
       </a>
-      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+    </li>
+  </ul>
+  <div class="row" align="center">
+    <div class="dropdown">
+      <button class="btn mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <img src="{{currentUser.image}}" class="rounded-circle" style="object-fit: cover;" alt="mdo" width="32" height="32" >
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" routerLink="../workspaces">Workspaces</a></li>
+        <li><a class="dropdown-item" routerLink=".">Settings</a></li>
+        <li><a class="dropdown-item" routerLink=".">Profile</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" routerLink=".">Sign out</a></li>
       </ul>
     </div>
+  </div>
+  
 </div>

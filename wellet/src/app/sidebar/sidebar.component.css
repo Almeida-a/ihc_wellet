@@ -27,3 +27,9 @@ mat-icon {
     background-color: black;
     position: fixed;
 }
+
+.dropdown-item {
+    font-family: 'Oswald';
+    color: black;
+
+}

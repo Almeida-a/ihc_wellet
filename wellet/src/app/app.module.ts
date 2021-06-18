@@ -39,7 +39,6 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
-
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { AddNewTransactionComponent } from './add-new-transaction/add-new-transaction.component';
 import { AddNewGoalComponent } from './add-new-goal/add-new-goal.component';
@@ -52,6 +51,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { NgApexchartsModule } from "ng-apexcharts";
 import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
+import { WorkspacesComponent } from './workspaces/workspaces.component';
+import { WorkspaceItemComponent } from './workspace-item/workspace-item.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,8 @@ import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
     GoalDetailsComponent,
     DocumentComponent,
     StackedGraphComponent,
+    WorkspacesComponent,
+    WorkspaceItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +109,7 @@ import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
 
     // ApexChart for analytics
     NgApexchartsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

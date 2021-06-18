@@ -9,13 +9,18 @@ import { MOCK_REPOSITORY } from './mock-repository';
 })
 export class RepositoryComponent implements OnInit {
 
-  repoDocuments: RepoDocument[]
+  repoDocuments: RepoDocument[];
+  inspectedDocument?: RepoDocument;
 
   constructor() {
     this.repoDocuments = MOCK_REPOSITORY;
   }
 
   ngOnInit(): void {
+  }
+
+  setInspectedDocument(document: RepoDocument) : void {
+    this.inspectedDocument = document;
   }
 
 }

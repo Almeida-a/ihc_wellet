@@ -1,10 +1,10 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row card-display" align="center">
         <div class="row" style="margin-top: -1vw;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
                 <img src="../../assets/piggy-bank.svg" style="min-height: 70px; max-width: 15%; margin-bottom: 1vw; margin-right: 1vw;">
                 <a routerLink="../add-new-goal">
-                    <button class="btn" type="submit">CREATE NEW GOAL</button>
+                    <button class="btn-add-goal" type="submit">CREATE NEW GOAL</button>
                 </a>
             </div>
         </div>
@@ -13,6 +13,12 @@
                 <ng-container *ngIf="goal.state == 'progress'">
                     <div class="overlay-image card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
                         <img class="card-img-top goal-image" style="border-radius: 20px;" src="{{goal.image}}" alt="Card image cap">
+                        <div class="goal-settings" style="padding: 2vw">
+                            <button class="btn-settings" (click)="setInspectedGoal(goal)" data-toggle="modal" data-target="#myModal">
+                                <mat-icon>settings</mat-icon>
+                            </button>
+                        </div>
+
                         <div class="overlay-text overlay-hover" style="padding: 2vw">
                             <p>{{goal.name}}</p>
                             <p>Saved amount: {{goal.currentValue | currency: "EUR"}}</p>
@@ -24,6 +30,12 @@
                 <ng-container *ngIf="goal.state === 'done'">
                     <div class="overlay-image card mx-auto mb-4" style="width: 90%; border-radius: 20px; border-color: transparent;">
                         <img class="card-img-top goal-image" style="border-radius: 20px; opacity: 50%" src="{{goal.image}}" alt="Card image cap">
+                        <div class="goal-settings" style="padding: 2vw">
+                            <button class="btn-settings" (click)="setInspectedGoal(goal)" data-toggle="modal" data-target="#myModal">
+                                <mat-icon>settings</mat-icon>
+                            </button>
+                        </div>
+
                         <div class="overlay-text overlay-hide">COMPLETED</div>
                         <div class="overlay-text overlay-hover" style="padding: 2vw">
                             <p>{{goal.name}}</p>
@@ -34,7 +46,7 @@
                     </div>
                 </ng-container>
 
-                <ng-container *ngIf="goal.name === ''">
+                <!-- <ng-container *ngIf="goal.name === ''">
                     <div class="card mx-auto" style="width: 70%; border-radius: 20px;">
                         <a routerLink="../add-new-goal"> 
                             <img class="card-img-top goal-image" style="border-radius: 20px;" src="../../assets/Add_Icon.png" alt="Card image cap">
@@ -44,9 +56,78 @@
                         <p class="filled-box-title my-4">Add goal</p>
                         <p class="filled-box-subtitle">Empty Slot</p>
                     </div>
-                </ng-container>
+                </ng-container> -->
+
             </div>
         </div> 
+    </div>
+</div>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" *ngIf="inspectedGoal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="container text-center">
+                <div class="row mt-3 mb-2">
+                    <div class="col">
+                        <button class="btn w-100 mx-auto" data-dismiss="modal"><mat-icon style="float: right;">close</mat-icon></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <img class="popup-img card-img-top" style="border-radius: 20px;" src="{{inspectedGoal.image}}" alt="Card image cap">
+                        <h3 class="modal-title my-4">{{inspectedGoal.name}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="filled-box-subtitle">"{{inspectedGoal.description}}"</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="modal-text">Saved amount: {{inspectedGoal.currentValue | currency: "EUR"}}</p>   
+                    <p class="modal-text">Goal: {{inspectedGoal.finalValue | currency: "EUR"}}</p>  
+                    <p class="modal-text">Deadline: {{inspectedGoal.deadline | date: "shortDate"}}</p>   
+                    <p class="modal-text">Status: {{inspectedGoal.state}}</p>
+                </div>
+                <div class="row mt-5" style="padding-left: 2vw; padding-right: 2vw; margin-bottom: -2vh;">
+                    <div class="col">
+                        <button class="btn btn-dark-yellow w-100 mx-auto text-center" style="min-height: 4rem;">Add money to saved amount</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-yellow w-100 mx-auto text-center">Subtract money to saved amount</button>
+                    </div>
+                </div>  
+                <div class="row my-5" style="padding-left: 2vw; padding-right: 2vw;">
+                    <div class="col">
+                        <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal" data-toggle="modal" data-target="#myModalDelete">Drop goal</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModalDelete" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h3 class="modal-title my-4">Are you sure you want to drop this goal?</h3>
+                        <mat-icon class="delete-icon mt-0 mb-4">remove_circle</mat-icon>
+                    </div>
+                </div>
+                <div class="row mx-auto mb-3 mt-2">
+                    <div class="col-6">
+                        <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal" (click)="ngOnInit()">Drop goal</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-dark-yellow w-100 mx-auto text-center" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>      
+
+            </div>
+        </div>
     </div>
 </div>
 

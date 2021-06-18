@@ -1,5 +1,5 @@
-<div class="container h-100">
-    <div class="row h-100">
+<div class="container">
+    <div class="row">
         <div class="col-7">
             <pdf-viewer [src]="pdfSrc" [render-text]="true" [fit-to-page]="true" style="display: block; height: 70vh;"></pdf-viewer>
         </div>
@@ -14,7 +14,7 @@
                             </div>
                             <div class="col">
                                 <h4 class="white-box-title mt-2 mb-0">Title</h4>
-                                <p class="white-box-text">PDS-Guiao10</p>
+                                <p class="white-box-text">Fatura EDP</p>
                             </div> 
                         </div>
                     </div>
@@ -36,11 +36,15 @@
                             </div>
                             <div class="col">
                                 <h4 class="white-box-title mt-2 mb-0">Category</h4>
-                                <p class="white-box-text">School</p>
+                                <p class="white-box-text">Electricity</p>
                             </div> 
                         </div>
                     </div>
-                    <button class="btn btn-white w-100 mx-auto text-center mt-4" (click)="ngOnInit()">Delete</button>
+                    <!-- <button class="btn btn-white w-100 mx-auto text-center mt-4" (click)="ngOnInit()">Delete</button> -->
+                    <a routerLink="../../repository">
+                        <button class="btn btn-white w-100 mx-auto text-center mt-4">Close</button>
+                    </a>
+                    
                 </div>
             </div>
         </div>

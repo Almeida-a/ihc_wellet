@@ -3,6 +3,7 @@ import { Transaction } from 'src/utils/Transaction';
 import { expenses } from "src/storage/ExpensesStorage";
 import { incomes } from "src/storage/IncomesStorage";
 import { currentStoredUser, users } from 'src/storage/UsersStorage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-transaction',
@@ -14,7 +15,7 @@ export class AddNewTransactionComponent implements OnInit {
   currentTransaction!: Transaction;
   transactionAdded: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
     this.transactionAdded = false;
   }
 
@@ -50,7 +51,6 @@ export class AddNewTransactionComponent implements OnInit {
   onSubmit(): void {
     this.currentTransaction.save();
     this.transactionAdded = true;
-    console.log(expenses)
   }
 
   onNewTransaction(): void {

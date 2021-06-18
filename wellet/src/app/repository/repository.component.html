@@ -11,14 +11,14 @@
             </div>
         </div>
     </div>
-    <div class="row mt-4 b-4">
+    <!--<div class="row mt-4 b-4">
         <p class="content-text">Number of files: {{repoDocuments.length}}</p>
-    </div>
+    </div>-->
     <div class="row mt-4 mx-1 overflow-auto h-100 d-inline-block">
         <div class="row" style="max-height: 50vh;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4" *ngFor="let doc of repoDocuments">
                 <div class="card w-100">
-                    <img class="card-img-top" src="../../assets/no_image_background.jpg" alt="Card image cap">
+                    <img class="btn card-img-top" style="padding: 0px; border-color: transparent;" src="../../assets/no_image_background.jpg" alt="Card image cap" data-toggle="modal" data-target="#myModal">
                     <div class="card-body">
                         <div class="row pl-3">
                             <div class="col-8 pl-0">
@@ -27,13 +27,81 @@
                                 <p class="card-text card-category">Category: <span style="font-weight: 300;">{{doc.category}}</span></p>
                             </div>
                             <div class="col-2 mx-auto my-auto">
-                                <a><mat-icon class="mt-2" style="color: rgb(248, 173, 68);">visibility</mat-icon></a>
+                                <button type="submit" class="btn mx-auto mb-3" data-toggle="modal" data-target="#myModal" (click)="setInspectedDocument(doc)">
+                                    <mat-icon class="mt-2" style="color: rgb(248, 173, 68);">visibility</mat-icon>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-    
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" *ngIf="inspectedDocument">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="container text-center">
+                    <div class="row mt-3 mb-2">
+                        <div class="col">
+                            <button class="btn w-100 mx-auto" data-dismiss="modal"><mat-icon style="float: right;">close</mat-icon></button>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-center">
+                            <img class="popup-img card-img-top" src="../../assets/no_image_background.jpg" alt="Card image cap">
+                            <h3 class="modal-title my-4">{{inspectedDocument.name}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="modal-text">Date: {{inspectedDocument.date.toLocaleDateString()}}</p>     
+                    </div>
+                    <div class="row">
+                        <p class="modal-text">Category: {{inspectedDocument.category}}</p>     
+                    </div>
+                    <div class="row">
+                        <p class="modal-text">Added by: Alex Will</p>  
+                    </div>
+                    <div class="row my-5" style="padding-left: 2vw; padding-right: 2vw;">
+                        <div class="col">
+                            <a routerLink="../document/0" data-dismiss="modal"> 
+                                <button class="btn btn-dark-yellow w-100 mx-auto text-center">Open document</button>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal" data-toggle="modal" data-target="#myModalDelete">Delete document</button>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModalDelete" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h3 class="modal-title my-4">Are you sure you want to delete this document?</h3>
+                            <mat-icon class="delete-icon mt-0 mb-4">remove_circle</mat-icon>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mb-3 mt-2">
+                        <div class="col-6">
+                            <button class="btn btn-yellow w-100 mx-auto text-center" data-dismiss="modal" (click)="ngOnInit()">Delete</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-dark-yellow w-100 mx-auto text-center" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>      
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
+

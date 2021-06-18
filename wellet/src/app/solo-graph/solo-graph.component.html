@@ -9,5 +9,16 @@
         [title]="chartOptions.title"
     >
     </apx-chart>
-    <!-- TODO: dropdown selector (for expenses/incomes categories)-->
+    <!-- TODO: dropdown selector (for expenses/incomes and categories)-->
+    <!-- Expenses Dropdown: -->
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" *ngFor="let category of getCategories()">
+            <li><a (click)="changeCategory">{{category}}</a></li>
+        </ul>
+    </div>
+    <!-- ... -->
+    <!-- Incomes Dropdown: -->
+    <!-- ... -->
 </div>

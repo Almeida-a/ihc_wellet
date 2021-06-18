@@ -72,6 +72,22 @@ export class SoloGraphComponent {
     };
   }
 
+  public getCategories = function() : (string | undefined)[] {
+    return expenses.map(e=>e.category);
+  }
+
+  /**
+   * changeCategory
+   */
+  public changeCategory(category: string): void {
+    this.chartOptions.series= [
+      {
+        name: category,
+        data: this.getExpensesData(category),
+      }
+    ]
+  }
+
   public getExpensesData = function(category: string) : (number | null)[] {
     
     var expensesData: (number | null)[];// [number, number | null][]; case datetime axis is possible

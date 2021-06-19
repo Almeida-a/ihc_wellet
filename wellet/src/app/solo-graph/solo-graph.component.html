@@ -1,5 +1,31 @@
-<div id="chart">
-    <apx-chart
+<div class="container-fluid" id="chart">
+    <!-- TODO: radio button -->
+    <div class="col-2">
+        <div class="btn-group col-md-2" role="group">
+            <button type="button" class="btn btn-secondary btn-yellow"
+                (click)="changeType('Expenses')">Expenses</button>
+            <button type="button" class="btn btn-secondary btn-yellow"
+                (click)="changeType('Incomes')">Incomes</button>
+        </div>
+        <!-- ... -->
+        <!-- TODO: better display of dropdown elements + show this side by side with chart-->
+        <!-- Expenses Dropdown: -->
+        <div class="dropdown row">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li *ngFor="let category of categories">
+                    <a class="dropdown-button" (click)="changeCategory(curr_type, category)">
+                        {{category}}
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <!-- ... -->
+    <div class="col">
+        <apx-chart
         [series]="chartOptions.series"
         [chart]="chartOptions.chart"
         [xaxis]="chartOptions.xaxis"
@@ -7,18 +33,9 @@
         [grid]="chartOptions.grid"
         [stroke]="chartOptions.stroke"
         [title]="chartOptions.title"
-    >
-    </apx-chart>
-    <!-- TODO: dropdown selector (for expenses/incomes and categories)-->
-    <!-- Expenses Dropdown: -->
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu" *ngFor="let category of getCategories()">
-            <li><a (click)="changeCategory">{{category}}</a></li>
-        </ul>
+        >
+        </apx-chart>
     </div>
-    <!-- ... -->
-    <!-- Incomes Dropdown: -->
+<!-- Incomes Dropdown: -->
     <!-- ... -->
 </div>

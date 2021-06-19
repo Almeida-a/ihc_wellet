@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnInit } from "@angular/core";
 // Apex charts docs at: apexcharts.com
 import {
   ChartComponent,
@@ -11,6 +11,7 @@ import {
   ApexGrid
 } from "ng-apexcharts";
 import { expenses } from "src/storage/ExpensesStorage";
+import { incomes } from "src/storage/IncomesStorage";
 import { Transaction } from "src/utils/Transaction";
 
 export type ChartOptions = {
@@ -28,16 +29,22 @@ export type ChartOptions = {
   templateUrl: "./solo-graph.component.html",
   styleUrls: ["./solo-graph.component.css"]
 })
-export class SoloGraphComponent {
+export class SoloGraphComponent implements OnInit {
   @ViewChild("chart") chart?: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-
+  public categories !: (string | null)[];
+  public curr_type!: string;
+  public curr_cat: string;
+  
   constructor() {
+    this.curr_type = 'Expenses';
+    this.curr_cat = this.getCategories() ? this.getCategories()[0] : "None";
+
     this.chartOptions = {
       series: [
         {
-          name: "Food",
-          data: this.getExpensesData("Food"),
+          name: this.curr_cat,
+          data: this.getTransactionsData(this.curr_type, this.curr_cat),
         }
       ],
       chart: {
@@ -54,7 +61,7 @@ export class SoloGraphComponent {
         curve: "smooth"
       },
       title: {
-        text: "Expenses: monthly",
+        text: this.curr_type,
         align: "left"
       },
       grid: {
@@ -71,9 +78,17 @@ export class SoloGraphComponent {
       }
     };
   }
+  ngOnInit(): void {
+    this.categories = this.getCategories();
+  }
 
-  public getCategories = function() : (string | undefined)[] {
-    return expenses.map(e=>e.category);
+  public getCategories = function() : string [] {
+    // TODO: discard repeated elements
+    return expenses.map(e=>{
+      if(e.category==undefined)
+        return "None";
+      return e.category;
+    });
   }
 
   /**
@@ -83,22 +98,38 @@ export class SoloGraphComponent {
     this.chartOptions.series= [
       {
         name: category,
-        data: this.getExpensesData(category),
+        data: this.getTransactionsData(this.curr_type, category),
       }
     ]
   }
 
-  public getExpensesData = function(category: string) : (number | null)[] {
+  /**
+   * changeType
+   */
+  public changeType(type: string): void {
+    this.curr_type = type;
+    this.chartOptions.title = {
+      text: this.curr_type,
+      align: "left"
+    };
+    this.changeCategory(this.curr_cat);
+  }
+
+  public getTransactionsData = function(type: string, category: string) : (number | null)[] {
     
-    var expensesData: (number | null)[];// [number, number | null][]; case datetime axis is possible
-    var expensesTmp: Transaction[];
+    var transactionsData: (number | null)[];// TODO [number, number | null][]; when datetime axis is possible
+    var transactionsTmp!: Transaction[];
     // Get all (expenses) transactions 
     // =expenses object
     // Filter transactions where t.category()==category
-    expensesTmp=expenses.filter(e=>e.category==category);
+    if(type=='Expenses') {
+      transactionsTmp = expenses.filter(e=>e.category==category);
+    } else if (type=='Incomes') {
+      transactionsTmp = incomes.filter(i=>i.category==category);
+    }
     // Get their dates and values:
     //  Parse data to -> data format consumable by the chart (expensesData = cast(expensesTmp))
-    expensesData = expensesTmp.map(e=>{
+    transactionsData = transactionsTmp.map(e=>{
       if(e.value==undefined) {
         return null;
       } else {
@@ -106,7 +137,6 @@ export class SoloGraphComponent {
       }
     }); // is it possible to get transaction date ?
 
-    return expensesData;
+    return transactionsData;
   }
-
 }

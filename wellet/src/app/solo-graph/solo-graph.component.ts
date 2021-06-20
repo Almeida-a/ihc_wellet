@@ -82,9 +82,11 @@ export class SoloGraphComponent implements OnInit {
     this.categories = this.getCategories();
   }
 
-  public getCategories = function() : string [] {
+  // Does not work as normal function, only as arrow function
+  public getCategories = () : string [] => {
     // TODO: discard repeated elements
-    return expenses.map(e=>{
+    let transactions: Transaction[] = this.curr_type == "Expenses" ? expenses : incomes;
+    return transactions.map(e=>{
       if(e.category==undefined)
         return "None";
       return e.category;
@@ -108,6 +110,8 @@ export class SoloGraphComponent implements OnInit {
    */
   public changeType(type: string): void {
     this.curr_type = type;
+    this.categories = this.getCategories();
+    this.curr_cat = this.categories[0] != null ? this.categories[0] : "None";
     this.chartOptions.title = {
       text: this.curr_type,
       align: "left"

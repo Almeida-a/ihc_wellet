@@ -1,31 +1,34 @@
 <div class="container-fluid" id="chart">
     <!-- TODO: radio button -->
-    <div class="col-2">
-        <div class="btn-group col-md-2" role="group">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="btn-group col-4" role="group">
             <button type="button" class="btn btn-secondary btn-yellow"
                 (click)="changeType('Expenses')">Expenses</button>
             <button type="button" class="btn btn-secondary btn-yellow"
                 (click)="changeType('Incomes')">Incomes</button>
         </div>
+        <div class="col-3"></div>
         <!-- ... -->
+    </div>
+    <!-- ... -->
+    <div class="row">
         <!-- TODO: better display of dropdown elements + show this side by side with chart-->
         <!-- Expenses Dropdown: -->
-        <div class="dropdown row">
+        <div class="dropdown col-sm-1">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li *ngFor="let category of categories">
-                    <a class="dropdown-button" (click)="changeCategory(curr_type, category)">
+                    <a class="dropdown-button" (click)="changeCategory(category)">
                         {{category}}
                     </a>
                 </li>
             </div>
         </div>
-    </div>
-    <!-- ... -->
-    <div class="col">
-        <apx-chart
+        <div class="col-2"></div>
+        <apx-chart class="col-lg-9" style="vertical-align: middle;"
         [series]="chartOptions.series"
         [chart]="chartOptions.chart"
         [xaxis]="chartOptions.xaxis"

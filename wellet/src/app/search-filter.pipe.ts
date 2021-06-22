@@ -11,7 +11,7 @@ export class SearchFilterPipe implements PipeTransform {
   // constructor() {
   //   this.datepipe = new DatePipe(LOCALE_ID.toString());
   // }
-  constructor(@Inject(LOCALE_ID) private locale: string) {}
+  constructor() {}
 
   transform(items: any[], option: string, searchText: string): any[] {
 
@@ -35,7 +35,7 @@ export class SearchFilterPipe implements PipeTransform {
           //   return this.datepipe.transform(it.date, 'yyyy-MM-dd')?.includes(searchText);
           // return true;
           // return formatDate(it.date, 'yyyy-MM-dd', this.locale).includes(searchText);
-          return it.date.toLocaleDateString(this.locale).toString().includes(searchText);
+          return it.date.toLocaleDateString().toString().includes(searchText);
         });
       }
       if ("category".includes(option.toLocaleLowerCase())) {
@@ -46,7 +46,7 @@ export class SearchFilterPipe implements PipeTransform {
     }
     // Else
     return items.filter(it => {
-      return it.name.toLocaleLowerCase().includes(searchText) || it.category.toLocaleLowerCase().includes(searchText) || it.date.toLocaleDateString(this.locale).toString().includes(searchText);
+      return it.name.toLocaleLowerCase().includes(searchText) || it.category.toLocaleLowerCase().includes(searchText) || it.date.toLocaleDateString().toString().includes(searchText);
     });
   }
 }

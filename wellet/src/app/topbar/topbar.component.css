@@ -115,3 +115,8 @@
 .mtc-4 {
     margin-top: 2.2rem;
 }
+
+.search-button {
+    background-color: transparent;
+    border-color: transparent;
+}

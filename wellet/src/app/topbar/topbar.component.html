@@ -18,12 +18,19 @@
             <div class="float-right">
                 <div class="input-group">
                     <div class="input-group">
-                        <input type="text" class="form-control search-bar-input" placeholder="Search">
+                        <input type="text" class="form-control search-bar-input" placeholder="Search" [(ngModel)]="searchText">
                         <div class="input-group-append">
                           <button class="btn search-bar-icon mx-auto" type="button">
                             <mat-icon class="mt-1">search</mat-icon>
                           </button>
                         </div>
+                    </div>
+                </div>
+                <div class="row" style="background-color: rgb(255, 213, 155); font-family: 'Oswald';">
+                    <div class="col">
+                        <button class="search-button" *ngFor="let route of routesInfo | topbarSearchFilter: searchText" routerLink="./{{route.routeLink}}">
+                            {{route.routeName}}
+                        </button>
                     </div>
                 </div>
             </div> 

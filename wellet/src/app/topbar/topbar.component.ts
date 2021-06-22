@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RouteInfo } from '../RouteInfo';
-import { routes_names } from '../app-routing.module'
+import { routes_names_topBar } from '../app-routing.module'
 import { User } from 'src/utils/User';
 
 @Component({
@@ -18,10 +18,12 @@ export class TopbarComponent implements OnInit {
   
   navigationSubscription: Subscription;
   routesInfo: RouteInfo[];
+  searchText: String;
 
   constructor(private router: Router) {
     
-    this.routesInfo = routes_names;
+    this.routesInfo = routes_names_topBar;
+    this.searchText = "";
 
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) 
@@ -34,6 +36,8 @@ export class TopbarComponent implements OnInit {
     for (let i: number = 0; i < this.routesInfo.length; i++)
 	  	if (this.router.url.replace("/", "").includes(this.routesInfo[i].routeLink))
 			  this.currentScreen = this.routesInfo[i].routeName;
+    
+    this.searchText = "";
   }
 
   ngOnInit(): void {}

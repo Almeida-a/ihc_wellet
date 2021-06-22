@@ -55,6 +55,24 @@ export const routes_names: RouteInfo[] = [
   { routeLink: 'workspaces', routeName: 'Workspaces' }
 ];
 
+export const routes_names_topBar: RouteInfo[] = [
+  { routeLink: 'dashboard', routeName: 'Dashboard' },
+  { routeLink: 'users', routeName: 'Users' },
+  { routeLink: 'history', routeName: 'History' },
+  { routeLink: 'expenses', routeName: 'Expenses' },
+  { routeLink: 'repository', routeName: 'Repository' },
+  { routeLink: 'goals', routeName: 'Goals' },
+  { routeLink: 'analytics', routeName: 'Analytics' },
+  // { routeLink: 'user-profile', routeName: 'User' },
+  // { routeLink: 'help', routeName: 'Help' },
+  { routeLink: 'add-new-user', routeName: 'Add User' },
+  { routeLink: 'add-new-transaction', routeName: 'Add Transaction' },
+  { routeLink: 'add-new-goal', routeName: 'Add Goal' },
+  // { routeLink: 'goal', routeName: 'Goal Details' },
+  // { routeLink: 'document', routeName: 'Document' },
+  { routeLink: 'workspaces', routeName: 'Workspaces' }
+];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

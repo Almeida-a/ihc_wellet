@@ -55,6 +55,7 @@ import { WorkspacesComponent } from './workspaces/workspaces.component';
 import { WorkspaceItemComponent } from './workspace-item/workspace-item.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { LOCALE_ID } from '@angular/core';
+import { TopbarSearchFilterPipe } from './topbar/topbar-search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { LOCALE_ID } from '@angular/core';
     WorkspacesComponent,
     WorkspaceItemComponent,
     SearchFilterPipe,
+    TopbarSearchFilterPipe,
   ],
   imports: [
     BrowserModule,

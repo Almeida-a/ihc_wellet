@@ -9,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   user: User; 
   singlePage?: boolean;
 

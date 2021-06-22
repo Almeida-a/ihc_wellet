@@ -12,11 +12,17 @@ export class RepositoryComponent implements OnInit {
   repoDocuments: RepoDocument[];
   inspectedDocument?: RepoDocument;
 
+  searchOptions: String[];
+  searchOption: String;
+
   constructor() {
     this.repoDocuments = MOCK_REPOSITORY;
+    this.searchOptions = ["Name", "Date", "Category"]
+    this.searchOption = "default";
   }
 
   ngOnInit(): void {
+    
   }
 
   setInspectedDocument(document: RepoDocument) : void {

@@ -68,3 +68,11 @@
     width: 6rem; 
     color: rgb(248, 173, 68);
 }
+
+.dropdown {
+    border-radius: 10px;
+    height: 4vh;
+    width: 90%;
+    border-color: rgb(248, 173, 68);
+    color: rgb(248, 173, 68);
+}

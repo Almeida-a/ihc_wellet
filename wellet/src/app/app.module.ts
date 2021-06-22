@@ -53,6 +53,8 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { StackedGraphComponent } from './stacked-graph/stacked-graph.component';
 import { WorkspacesComponent } from './workspaces/workspaces.component';
 import { WorkspaceItemComponent } from './workspace-item/workspace-item.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+import { LOCALE_ID } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import { WorkspaceItemComponent } from './workspace-item/workspace-item.componen
     StackedGraphComponent,
     WorkspacesComponent,
     WorkspaceItemComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -111,7 +114,7 @@ import { WorkspaceItemComponent } from './workspace-item/workspace-item.componen
     NgApexchartsModule,
 
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: "pt-PT" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

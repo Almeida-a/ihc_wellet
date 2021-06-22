@@ -12,7 +12,7 @@
                 </div>
             </div> -->
             <select (change)="update($event)" class="dropdown" [(ngModel)]="searchOption">
-                <option value="default">Filter by ----</option>
+                <option value="default">Filter by</option>
                 <option *ngFor="let option of searchOptions" [value]="option">
                     {{option}}
                 </option>
@@ -30,14 +30,14 @@
     
     <div class="row mt-4 mx-1 overflow-auto h-100 d-inline-block">
         <div class="row" style="max-height: 50vh;">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4" *ngFor="let doc of repoDocuments | searchFilter: searchOption : searchText">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4" *ngFor="let doc of repoDocuments | searchFilter:searchOption:searchText">
                 <div class="card w-100">
                     <img class="btn card-img-top" style="padding: 0px; border-color: transparent;" src="../../assets/no_image_background.jpg" alt="Card image cap" data-toggle="modal" data-target="#myModal">
                     <div class="card-body">
                         <div class="row pl-3">
                             <div class="col-8 pl-0">
                                 <h5 class="card-title">{{doc.name}}</h5>
-                                <p class="card-text card-date mb-0">Date: <span style="font-weight: 300;">{{doc.date.toLocaleDateString("pt-Pt")}}</span></p>
+                                <p class="card-text card-date mb-0">Date: <span style="font-weight: 300;">{{doc.date.toLocaleDateString()}}</span></p>
                                 <p class="card-text card-category">Category: <span style="font-weight: 300;">{{doc.category}}</span></p>
                             </div>
                             <div class="col-2 mx-auto my-auto">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <p class="modal-text">Date: {{inspectedDocument.date.toLocaleDateString("pt-PT")}}</p>     
+                        <p class="modal-text">Date: {{inspectedDocument.date.toLocaleDateString()}}</p>     
                     </div>
                     <div class="row">
                         <p class="modal-text">Category: {{inspectedDocument.category}}</p>     

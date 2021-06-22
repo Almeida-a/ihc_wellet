@@ -114,7 +114,7 @@ import { LOCALE_ID } from '@angular/core';
     NgApexchartsModule,
 
   ],
-  providers: [{ provide: LOCALE_ID, useValue: "pt-PT" }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
